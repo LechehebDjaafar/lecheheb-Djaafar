@@ -1,0 +1,3380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Lecheheb Djaafar — The Grandmaster's Citadel | Full-Stack, AI & IoT Architect</title>
+<meta name="description" content="Lecheheb Djaafar — Master's in Computer Science (With Distinction), Full-Stack Python/Flutter Architect, AI & IoT Innovator, 5x Startup Label Laureate from Ouargla, Algeria.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309090b' stroke='%23d4a853' stroke-width='3'/%3E%3Cpath d='M32 10 L36 18 L46 14 L42 28 L50 34 L46 48 L18 48 L14 34 L22 28 L18 14 L28 18 Z' fill='%23d4a853'/%3E%3Crect x='16' y='51' width='32' height='5' rx='2' fill='%23d4a853'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg-obsidian: #070709;
+  --bg-elevated: #0e0e12;
+  --bg-card: rgba(18, 18, 24, 0.78);
+  --bg-card-solid: #121218;
+  --bg-glass: rgba(12, 12, 16, 0.82);
+  --text-ivory: #f5f0e6;
+  --text-parchment: #c8bfa8;
+  --text-muted: #847d6d;
+  --gold-primary: #d4a853;
+  --gold-bright: #f3c969;
+  --gold-deep: #8c6722;
+  --gold-glow: rgba(212, 168, 83, 0.24);
+  --crimson-seal: #9e2a2b;
+  --emerald-tac: #2ec4b6;
+  --royal-azure: #4ea8de;
+  --border-filigree: rgba(212, 168, 83, 0.22);
+  --border-subtle: rgba(245, 240, 230, 0.08);
+  --shadow-citadel: 0 24px 60px -12px rgba(0, 0, 0, 0.85), 0 0 28px -4px rgba(212, 168, 83, 0.14);
+  --font-display: 'Cinzel', 'Amiri', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-arch: 16px;
+  --radius-sm: 10px;
+}
+
+[data-theme="light"] {
+  --bg-obsidian: #f6f2e9;
+  --bg-elevated: #ece5d5;
+  --bg-card: rgba(255, 252, 245, 0.88);
+  --bg-card-solid: #fffcf5;
+  --bg-glass: rgba(246, 242, 233, 0.88);
+  --text-ivory: #161412;
+  --text-parchment: #423c32;
+  --text-muted: #6e6556;
+  --gold-primary: #9c6d1a;
+  --gold-bright: #b88424;
+  --gold-deep: #6b490e;
+  --gold-glow: rgba(156, 109, 26, 0.18);
+  --border-filigree: rgba(156, 109, 26, 0.28);
+  --border-subtle: rgba(22, 20, 18, 0.1);
+  --shadow-citadel: 0 20px 45px -12px rgba(45, 35, 18, 0.15), 0 0 20px -4px rgba(156, 109, 26, 0.1);
+}
+
+[dir="rtl"] {
+  --font-display: 'Amiri', 'Cairo', serif;
+  --font-body: 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--bg-obsidian);
+  color: var(--text-ivory);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-obsidian);
+  color: var(--text-ivory);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(to right, rgba(212, 168, 83, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 168, 83, 0.03) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(212, 168, 83, 0.12), transparent 65%);
+  background-size: 64px 64px, 64px 64px, 100% 100%;
+  pointer-events: none;
+}
+
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-bright), #fff2cc, var(--gold-primary));
+  z-index: 9999;
+  box-shadow: 0 0 12px var(--gold-bright);
+  transition: width 0.08s linear;
+}
+
+.chess-ranks-rail {
+  position: fixed;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 40;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0.55;
+  pointer-events: none;
+  user-select: none;
+}
+.chess-ranks-rail span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s, transform 0.3s;
+}
+.chess-ranks-rail span.active-rank {
+  color: var(--gold-bright);
+  font-weight: 700;
+  transform: scale(1.25);
+  text-shadow: 0 0 8px var(--gold-glow);
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border-filigree);
+  transition: all 0.3s ease;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 16px;
+}
+
+.brand-crest {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-ivory);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.crest-emblem {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1d1a14, #09090b);
+  border: 1.5px solid var(--gold-primary);
+  display: grid;
+  place-items: center;
+  color: var(--gold-bright);
+  box-shadow: 0 0 15px var(--gold-glow);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.brand-crest:hover .crest-emblem {
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.brand-name {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-ivory);
+  letter-spacing: 0.05em;
+  line-height: 1.15;
+}
+.brand-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gold-primary);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 13px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-parchment);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+.nav-links a .chess-glyph {
+  color: var(--gold-primary);
+  font-size: 15px;
+  transition: transform 0.25s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--text-ivory);
+  background: rgba(212, 168, 83, 0.1);
+  border-color: var(--border-filigree);
+}
+.nav-links a:hover .chess-glyph {
+  transform: translateY(-2px) scale(1.15);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-filigree);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 9px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.lang-btn:hover {
+  color: var(--text-ivory);
+}
+.lang-btn[aria-pressed="true"] {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-deep));
+  color: #09090b;
+  box-shadow: 0 2px 8px var(--gold-glow);
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-filigree);
+  color: var(--gold-primary);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.icon-btn:hover {
+  background: rgba(212, 168, 83, 0.16);
+  color: var(--gold-bright);
+  transform: translateY(-1px);
+}
+.icon-btn[aria-pressed="true"] {
+  background: rgba(212, 168, 83, 0.22);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+.device-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(46, 196, 182, 0.1);
+  border: 1px solid rgba(46, 196, 182, 0.35);
+  color: var(--emerald-tac);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+}
+.device-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--emerald-tac);
+  box-shadow: 0 0 8px var(--emerald-tac);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.55; }
+}
+
+.hero-section {
+  position: relative;
+  padding: 64px 0 80px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-filigree);
+}
+
+.hero-bg-media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.hero-bg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  filter: contrast(1.15) saturate(0.85);
+  transform: scale(1.04);
+  animation: slowPanHero 26s ease-in-out infinite alternate;
+}
+[data-theme="light"] .hero-bg-media img {
+  opacity: 0.11;
+  filter: sepia(0.3) contrast(1.05);
+}
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 35%, rgba(212, 168, 83, 0.16), transparent 55%),
+    linear-gradient(to bottom, rgba(7, 7, 9, 0.45) 0%, var(--bg-obsidian) 96%);
+}
+[data-theme="light"] .hero-bg-overlay {
+  background:
+    radial-gradient(circle at 75% 35%, rgba(156, 109, 26, 0.12), transparent 55%),
+    linear-gradient(to bottom, rgba(246, 242, 233, 0.55) 0%, var(--bg-obsidian) 96%);
+}
+
+@keyframes slowPanHero {
+  0% { transform: scale(1.04) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-1.5%, -1%); }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.royal-overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(212, 168, 83, 0.12);
+  border: 1px solid var(--border-filigree);
+  color: var(--gold-bright);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.2vw, 66px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--text-ivory);
+  margin-bottom: 14px;
+}
+.hero-title .gold-shimmer {
+  background: linear-gradient(120deg, #fff3d1 0%, var(--gold-bright) 35%, #b8862d 65%, #fff3d1 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineText 6s linear infinite;
+}
+[data-theme="light"] .hero-title .gold-shimmer {
+  background: linear-gradient(120deg, #5e3f09 0%, #9c6d1a 45%, #c7902c 75%, #5e3f09 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shineText {
+  to { background-position: 200% center; }
+}
+
+.hero-role-typewriter {
+  font-family: var(--font-mono);
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: var(--gold-primary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+}
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 18px;
+  background: var(--gold-bright);
+  animation: blinkCaret 0.9s step-end infinite;
+}
+@keyframes blinkCaret {
+  50% { opacity: 0; }
+}
+
+.hero-lead {
+  font-size: clamp(16px, 1.35vw, 18.5px);
+  color: var(--text-parchment);
+  max-width: 640px;
+  margin-bottom: 28px;
+  line-height: 1.75;
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.btn-royal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--gold-bright);
+  background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-primary) 55%, var(--gold-deep) 100%);
+  color: #09090b;
+  box-shadow: 0 10px 28px -6px rgba(212, 168, 83, 0.55);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-royal:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 36px -6px rgba(243, 201, 105, 0.75);
+}
+
+.btn-citadel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--bg-card);
+  color: var(--text-ivory);
+  border: 1px solid var(--border-filigree);
+  transition: all 0.3s ease;
+}
+.btn-citadel:hover {
+  border-color: var(--gold-bright);
+  background: rgba(212, 168, 83, 0.12);
+  transform: translateY(-2px);
+}
+
+.hero-metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  box-shadow: var(--shadow-citadel);
+}
+.metric-cell {
+  padding: 6px 10px;
+  border-inline-start: 2px solid var(--border-filigree);
+}
+.metric-cell:first-child {
+  border-inline-start: none;
+}
+.metric-val {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 800;
+  color: var(--gold-bright);
+  line-height: 1.1;
+}
+.metric-lbl {
+  font-size: 12px;
+  color: var(--text-parchment);
+  margin-top: 4px;
+}
+
+.profile-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  perspective: 1100px;
+}
+
+.sovereign-holo-rig {
+  position: relative;
+  width: clamp(290px, 34vw, 410px);
+  height: clamp(290px, 34vw, 410px);
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease-out;
+}
+
+.ring-astrolabe-outer {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(212, 168, 83, 0.45);
+  animation: spinAstrolabeCW 38s linear infinite;
+  pointer-events: none;
+}
+.ring-astrolabe-outer::before {
+  content: "♔   E4  ·  ♕  D8  ·  ♘  F6  ·  ♖  A1  ·  ♗  C4  ·  ♙  E5 ";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold-primary);
+  background: var(--bg-obsidian);
+  padding: 2px 10px;
+  border: 1px solid var(--border-filigree);
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+.ring-gothic-inner {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 168, 83, 0.32);
+  box-shadow: inset 0 0 30px rgba(212, 168, 83, 0.2), 0 0 35px rgba(212, 168, 83, 0.18);
+  animation: spinAstrolabeCCW 26s linear infinite;
+  pointer-events: none;
+}
+
+.chess-orbit-track {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  animation: spinAstrolabeCW 22s linear infinite;
+  pointer-events: none;
+}
+.orbit-node {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-card-solid);
+  border: 1.5px solid var(--gold-bright);
+  color: var(--gold-bright);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  box-shadow: 0 0 14px var(--gold-glow);
+  animation: spinAstrolabeCCW 22s linear infinite;
+}
+.orbit-node.n1 { top: -18px; left: calc(50% - 18px); }
+.orbit-node.n2 { bottom: -18px; left: calc(50% - 18px); }
+.orbit-node.n3 { left: -18px; top: calc(50% - 18px); }
+.orbit-node.n4 { right: -18px; top: calc(50% - 18px); }
+
+@keyframes spinAstrolabeCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes spinAstrolabeCCW {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.portrait-crest-frame {
+  position: relative;
+  width: 82%;
+  height: 82%;
+  border-radius: 50%;
+  padding: 7px;
+  background: conic-gradient(from 0deg, var(--gold-deep), var(--gold-bright), #fff6d6, var(--gold-primary), var(--gold-deep));
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.8), 0 0 40px var(--gold-glow);
+  overflow: hidden;
+  transform: translateZ(30px);
+}
+
+.portrait-inner-mask {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background: #0c0c0e;
+}
+
+.portrait-inner-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+}
+
+.sovereign-holo-rig:hover .portrait-inner-mask img {
+  transform: scale(1.07);
+  filter: contrast(1.08) brightness(1.05);
+}
+
+.portrait-inner-mask::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: linear-gradient(115deg, transparent 42%, rgba(243, 201, 105, 0.32) 50%, transparent 58%);
+  transform: translateX(-100%) rotate(15deg);
+  animation: portraitSweep 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes portraitSweep {
+  0%, 35% { transform: translateX(-120%) rotate(15deg); }
+  75%, 100% { transform: translateX(120%) rotate(15deg); }
+}
+
+.floating-crest-badge {
+  position: absolute;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-ivory);
+  transform: translateZ(50px);
+  animation: floatBob 4s ease-in-out infinite;
+  z-index: 4;
+}
+.floating-crest-badge.badge-top-right {
+  top: 6%;
+  right: -4%;
+  animation-delay: 0s;
+}
+.floating-crest-badge.badge-bottom-left {
+  bottom: 8%;
+  left: -6%;
+  animation-delay: -2s;
+}
+.floating-crest-badge.badge-bottom-right {
+  bottom: -4%;
+  right: 8%;
+  animation-delay: -1s;
+  background: linear-gradient(135deg, rgba(158, 42, 43, 0.9), rgba(85, 18, 20, 0.95));
+  border-color: var(--gold-bright);
+  color: #fff;
+}
+
+@keyframes floatBob {
+  0%, 100% { transform: translateZ(50px) translateY(0px); }
+  50% { transform: translateZ(50px) translateY(-8px); }
+}
+
+.portrait-aura-controls {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.aura-pill {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-parchment);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.aura-pill.active {
+  background: rgba(212, 168, 83, 0.2);
+  border-color: var(--gold-primary);
+  color: var(--gold-bright);
+}
+
+.sovereign-holo-rig[data-aura="gold"] .portrait-inner-mask img {
+  filter: sepia(0.28) contrast(1.12) brightness(1.03);
+}
+.sovereign-holo-rig[data-aura="cyber"] .portrait-inner-mask img {
+  filter: hue-rotate(170deg) contrast(1.16) saturate(1.25);
+}
+.sovereign-holo-rig[data-aura="pure"] .portrait-inner-mask img {
+  filter: grayscale(1) contrast(1.18);
+}
+
+.citadel-section {
+  padding: 88px 0;
+  position: relative;
+  border-bottom: 1px solid var(--border-filigree);
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.section-coord {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  color: var(--text-ivory);
+  line-height: 1.2;
+}
+
+.section-desc {
+  color: var(--text-parchment);
+  max-width: 680px;
+  margin-top: 10px;
+  font-size: 16.5px;
+}
+
+.gothic-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin: 18px 0 0;
+}
+.gothic-divider::before, .gothic-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-filigree), transparent);
+}
+
+.arsenal-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.codex-scroll-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  border-radius: var(--radius-arch);
+  padding: 32px;
+  box-shadow: var(--shadow-citadel);
+  position: relative;
+  overflow: hidden;
+}
+.codex-scroll-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold-bright), var(--gold-deep));
+}
+
+.codex-scroll-card p + p {
+  margin-top: 16px;
+}
+.codex-scroll-card p {
+  color: var(--text-parchment);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.codex-art-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+.codex-art-item {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-filigree);
+  position: relative;
+  aspect-ratio: 4/3;
+  background: #0b0b0e;
+}
+.codex-art-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.codex-art-item:hover img {
+  transform: scale(1.08);
+}
+.codex-art-caption {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  padding: 8px 12px;
+  background: linear-gradient(to top, rgba(7,7,9,0.95), transparent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold-bright);
+}
+
+.chess-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.chess-skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  border-radius: 14px;
+  padding: 20px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+.chess-skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-bright);
+  box-shadow: 0 16px 35px -10px rgba(212, 168, 83, 0.25);
+}
+.skill-piece-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.piece-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(212, 168, 83, 0.12);
+  border: 1px solid var(--border-filigree);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  color: var(--gold-bright);
+}
+.piece-Square-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold-primary);
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(212, 168, 83, 0.08);
+  border: 1px solid var(--border-filigree);
+}
+.chess-skill-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-ivory);
+  margin-bottom: 8px;
+}
+.skill-pill-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.skill-pill {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  color: var(--text-parchment);
+  border: 1px solid var(--border-subtle);
+}
+
+.chronicle-chess-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.timeline-royal {
+  list-style: none;
+  position: relative;
+  padding-inline-start: 28px;
+}
+.timeline-royal::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  inset-inline-start: 7px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold-bright), var(--gold-primary), transparent);
+}
+.timeline-node {
+  position: relative;
+  padding: 20px 24px;
+  margin-bottom: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+.timeline-node:hover {
+  border-color: var(--gold-bright);
+  transform: translateX(-4px);
+}
+[dir="ltr"] .timeline-node:hover {
+  transform: translateX(4px);
+}
+.timeline-node::before {
+  content: attr(data-piece);
+  position: absolute;
+  top: 20px;
+  inset-inline-start: -35px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-obsidian);
+  border: 2px solid var(--gold-bright);
+  color: var(--gold-bright);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+.tl-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.tl-time {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  background: rgba(212, 168, 83, 0.12);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+.tl-coord {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.timeline-node h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-ivory);
+  margin-bottom: 6px;
+}
+.timeline-node p {
+  font-size: 14.5px;
+  color: var(--text-parchment);
+}
+
+.tactician-sanctum {
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  border-radius: var(--radius-arch);
+  padding: 24px;
+  box-shadow: var(--shadow-citadel);
+  position: sticky;
+  top: 96px;
+}
+.sanctum-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 10px;
+}
+.sanctum-title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--gold-bright);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sanctum-status {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(46, 196, 182, 0.14);
+  color: var(--emerald-tac);
+  border: 1px solid rgba(46, 196, 182, 0.35);
+}
+
+.chessboard-frame {
+  padding: 10px;
+  background: linear-gradient(135deg, #231c12, #0d0b09);
+  border: 2px solid var(--gold-primary);
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.9);
+}
+
+.mini-chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border: 1px solid rgba(212, 168, 83, 0.4);
+  direction: ltr;
+}
+
+.chess-sq {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  font-size: clamp(20px, 3vw, 30px);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: background-color 0.18s ease, transform 0.15s ease;
+}
+.chess-sq.light-sq {
+  background-color: #d8c6a5;
+  color: #16130e;
+}
+.chess-sq.dark-sq {
+  background-color: #5c4628;
+  color: #f7eedc;
+}
+.chess-sq.selected-sq {
+  background-color: #e8b949 !important;
+  box-shadow: inset 0 0 0 3px #fff3c4;
+}
+.chess-sq.valid-target::after {
+  content: "";
+  width: 32%;
+  height: 32%;
+  border-radius: 50%;
+  background: rgba(46, 196, 182, 0.85);
+  box-shadow: 0 0 10px var(--emerald-tac);
+}
+.chess-sq .piece-char {
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.45));
+  transition: transform 0.2s ease;
+}
+.chess-sq .piece-char.white-p {
+  color: #fffdf7;
+  text-shadow: 0 1px 4px #000, 0 0 2px #000;
+}
+.chess-sq .piece-char.black-p {
+  color: #111015;
+  text-shadow: 0 0 2px rgba(255, 225, 150, 0.8);
+}
+
+.sanctum-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.sanctum-hint {
+  font-size: 13px;
+  color: var(--text-parchment);
+  flex: 1;
+}
+
+.armory-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  border-radius: 14px;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-btn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-parchment);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.filter-btn:hover {
+  border-color: var(--gold-primary);
+  color: var(--text-ivory);
+}
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-deep));
+  color: #09090b;
+  border-color: var(--gold-bright);
+  font-weight: 700;
+  box-shadow: 0 4px 14px var(--gold-glow);
+}
+
+.search-box-wrap {
+  position: relative;
+  min-width: 250px;
+  flex: 0 1 300px;
+}
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 9px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-filigree);
+  color: var(--text-ivory);
+  font-family: inherit;
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-input:focus {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--gold-bright);
+  box-shadow: 0 22px 44px -12px rgba(0, 0, 0, 0.85), 0 0 24px var(--gold-glow);
+}
+
+.proj-thumb-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #0d0d11;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-filigree);
+}
+.proj-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-card:hover .proj-thumb-wrap img {
+  transform: scale(1.08);
+}
+.proj-chess-rank {
+  position: absolute;
+  top: 10px;
+  inset-inline-start: 10px;
+  background: rgba(7, 7, 9, 0.86);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-bright);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+.proj-cat-badge {
+  position: absolute;
+  bottom: 10px;
+  inset-inline-end: 10px;
+  background: rgba(212, 168, 83, 0.92);
+  color: #09090b;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.proj-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.proj-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-ivory);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.proj-desc {
+  font-size: 13.5px;
+  color: var(--text-parchment);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.proj-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: rgba(212, 168, 83, 0.08);
+  color: var(--gold-primary);
+  border: 1px solid rgba(212, 168, 83, 0.22);
+}
+.proj-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+.proj-link-btn {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.proj-inspect-btn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-filigree);
+  color: var(--text-parchment);
+  padding: 5px 11px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.proj-inspect-btn:hover {
+  border-color: var(--gold-bright);
+  color: var(--text-ivory);
+}
+
+.vault-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.vault-plate-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-filigree);
+  aspect-ratio: 16 / 10;
+  background: #0a0a0d;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+.vault-plate-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  border-color: var(--gold-bright);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+  z-index: 3;
+}
+.vault-plate-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.vault-plate-card:hover img {
+  transform: scale(1.1);
+}
+.vault-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 7, 9, 0.94) 0%, rgba(7, 7, 9, 0.2) 55%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px 12px;
+}
+.vault-code {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gold-bright);
+}
+.vault-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f5f0e6;
+  line-height: 1.25;
+}
+
+.cv-scrolls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.cv-scroll-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+.cv-scroll-item:hover {
+  border-color: var(--gold-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.5);
+}
+.wax-seal-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #c93b3b, #6e1416);
+  border: 2px solid var(--gold-bright);
+  color: #fff3d1;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(158, 42, 43, 0.5);
+}
+
+.contact-citadel-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-filigree);
+  border-radius: 20px;
+  padding: 44px;
+  box-shadow: var(--shadow-citadel);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.email-royal-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 14px 22px;
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--gold-primary);
+  font-family: var(--font-mono);
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 700;
+  color: var(--gold-bright);
+  text-decoration: none;
+  direction: ltr;
+  word-break: break-all;
+}
+
+.social-alliances-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.social-seal-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-filigree);
+  color: var(--text-ivory);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  direction: ltr;
+}
+.social-seal-link:hover {
+  border-color: var(--gold-bright);
+  background: rgba(212, 168, 83, 0.14);
+  transform: translateY(-2px);
+}
+.social-seal-link .seal-glyph {
+  color: var(--gold-bright);
+  font-size: 18px;
+}
+
+.citadel-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(5, 5, 8, 0.86);
+  backdrop-filter: blur(12px);
+  display: none;
+  place-items: center;
+  padding: 20px;
+}
+.citadel-modal-backdrop.open {
+  display: grid;
+}
+.citadel-modal-box {
+  max-width: 760px;
+  width: 100%;
+  background: var(--bg-card-solid);
+  border: 1.5px solid var(--gold-primary);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(0,0,0,0.95), 0 0 40px var(--gold-glow);
+  animation: modalPop 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.92) translateY(16px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-media {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: #08080a;
+  position: relative;
+}
+.modal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modal-content {
+  padding: 26px;
+}
+
+.mobile-grandmaster-dock {
+  display: none;
+  position: fixed;
+  bottom: 12px;
+  inset-inline: 14px;
+  z-index: 950;
+  background: rgba(12, 12, 16, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid var(--gold-primary);
+  border-radius: 18px;
+  padding: 8px 10px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85), 0 0 22px var(--gold-glow);
+  justify-content: space-around;
+  align-items: center;
+}
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: var(--text-parchment);
+  text-decoration: none;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+.dock-item .dock-piece {
+  font-size: 19px;
+  color: var(--gold-bright);
+  line-height: 1;
+}
+.dock-item.active, .dock-item:hover {
+  background: rgba(212, 168, 83, 0.18);
+  color: var(--text-ivory);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  padding: 40px 0 96px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13.5px;
+}
+
+@media (max-width: 1080px) {
+  .chess-ranks-rail { display: none; }
+  .hero-grid, .arsenal-layout, .chronicle-chess-split, .contact-citadel-box {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .profile-stage { order: -1; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .vault-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .cv-scrolls-grid { grid-template-columns: repeat(2, 1fr); }
+  .tactician-sanctum { position: static; }
+}
+
+@media (max-width: 760px) {
+  .wrap { padding: 0 18px; }
+  .nav-links { display: none; }
+  .mobile-grandmaster-dock { display: flex; }
+  .hero-section { padding: 36px 0 56px; }
+  .hero-metrics-bar { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .metric-cell { border-inline-start: 2px solid var(--border-filigree) !important; }
+  .chess-skills-grid, .projects-grid, .cv-scrolls-grid, .social-alliances-grid {
+    grid-template-columns: 1fr;
+  }
+  .vault-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .contact-citadel-box { padding: 26px 20px; }
+  .citadel-section { padding: 60px 0; }
+  .floating-crest-badge.badge-top-right { right: 0; top: 0; }
+  .floating-crest-badge.badge-bottom-left { left: 0; bottom: 4%; }
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<canvas id="particles-canvas"></canvas>
+
+<aside class="chess-ranks-rail" aria-hidden="true">
+  <span data-rank="8">8 · ♔</span>
+  <span data-rank="7">7 · ♕</span>
+  <span data-rank="6">6 · ♖</span>
+  <span data-rank="5">5 · ♗</span>
+  <span data-rank="4">4 · ♘</span>
+  <span data-rank="3">3 · ♙</span>
+  <span data-rank="2">2 · ⚔</span>
+  <span data-rank="1">1 · ⚜</span>
+</aside>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand-crest">
+      <div class="crest-emblem" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L14.5 7L20 5L17.5 13H6.5L4 5L9.5 7L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M5 16H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V16Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="brand-text-wrap">
+        <span class="brand-name">LECHEHEB DJAAFAR</span>
+        <span class="brand-sub" data-i="brandSub">GRANDMASTER ARCHITECT · E4</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about"><span class="chess-glyph">♔</span> <span data-i="navAbout">القلعة والمهارات</span></a></li>
+      <li><a href="#chronicles"><span class="chess-glyph">♘</span> <span data-i="navChronicles">السجل والشطرنج</span></a></li>
+      <li><a href="#projects"><span class="chess-glyph">♖</span> <span data-i="navProjects">ترسانة المشاريع</span></a></li>
+      <li><a href="#vault"><span class="chess-glyph">♕</span> <span data-i="navVault">المعرض الملكي (20)</span></a></li>
+      <li><a href="#contact"><span class="chess-glyph">♗</span> <span data-i="navContact">الديوان والتواصل</span></a></li>
+    </ul>
+
+    <div class="header-controls">
+      <div class="device-badge" id="device-indicator" title="Auto Viewport Detection Active">
+        <span class="device-dot"></span>
+        <span id="device-mode-label">DESKTOP CITADEL</span>
+      </div>
+      <div class="lang-switcher" role="group" aria-label="Language Selector">
+        <button type="button" class="lang-btn" data-l="ar" aria-pressed="true">AR</button>
+        <button type="button" class="lang-btn" data-l="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang-btn" data-l="fr" aria-pressed="false">FR</button>
+      </div>
+      <button type="button" class="icon-btn" id="sound-toggle" aria-pressed="false" title="Toggle Acoustic Tactile Chimes">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path id="sound-waves" d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button type="button" class="icon-btn" id="theme-toggle" title="Switch Dark Obsidian / Royal Parchment Theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero-section">
+    <div class="hero-bg-media">
+      <img src="images/vault/citadel_hero.jpg" alt="Grandmaster Citadel Architecture">
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="royal-overline">
+          <span>⚜</span>
+          <span data-i="heroBadge">ماستر إعلام آلي بامتياز 2025 · 5 أوسمة Startup · ورقلة، الجزائر</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span data-i="heroGreeting">لشهب جعفر</span><br>
+          <span class="gold-shimmer" data-i="heroHeadline">مهندس الأنظمة الاستراتيجية والذكاء الاصطناعي</span>
+        </h1>
+
+        <div class="hero-role-typewriter">
+          <span>♔</span>
+          <span id="typewriter-text">Full-Stack Python &amp; Flutter Architect</span>
+          <span class="cursor-blink"></span>
+        </div>
+
+        <p class="hero-lead" data-i="heroLead">
+          خريج ماستر إعلام آلي (دفعة 2025 بتقدير امتياز) من جامعة قاصدي مرباح بورقلة. أبني الأنظمة الرقمية، تطبيقات الويب والموبايل، وحلول إنترنت الأشياء المدعومة بالذكاء الاصطناعي كما يُدير أستاذ الشطرنج رقعته: بدقة هندسية، بصيرة استباقية، وإتقان ملكي لا يقبل المساومة.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#projects" class="btn-royal">
+            <span>♖</span>
+            <span data-i="ctaExplore">استكشف ترسانة الأعمال (27 مشروعاً)</span>
+          </a>
+          <a href="#cv-vault" class="btn-citadel">
+            <span>📜</span>
+            <span data-i="ctaCV">خزانة السير الذاتية والوثائق</span>
+          </a>
+          <a href="mailto:djaafardjaafarlolo@gmail.com" class="btn-citadel">
+            <span>✉</span>
+            <span data-i="ctaContact">راسل الديوان مباشرة</span>
+          </a>
+        </div>
+
+        <div class="hero-metrics-bar">
+          <div class="metric-cell">
+            <div class="metric-val" data-count="30" data-suffix="+">30+</div>
+            <div class="metric-lbl" data-i="m1">مشروعاً وعميلاً منذ 2021</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-val" data-count="5" data-suffix=" ⚜">5 ⚜</div>
+            <div class="metric-lbl" data-i="m2">أوسمة مشاريع ناشئة (Startup)</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-val" data-count="2025" data-suffix="">2025</div>
+            <div class="metric-lbl" data-i="m3">ماستر بامتياز — ورقلة</div>
+          </div>
+          <div class="metric-cell">
+            <div class="metric-val" data-count="20" data-suffix=" ♕">20 ♕</div>
+            <div class="metric-lbl" data-i="m4">لوحة فنية وتقنية بالمعرض</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-stage">
+        <div class="sovereign-holo-rig" id="profile-rig" data-aura="gold">
+          <div class="ring-astrolabe-outer"></div>
+          <div class="ring-gothic-inner"></div>
+
+          <div class="chess-orbit-track" aria-hidden="true">
+            <div class="orbit-node n1" title="King — System Architecture">♔</div>
+            <div class="orbit-node n2" title="Queen — AI & Deep Learning">♕</div>
+            <div class="orbit-node n3" title="Knight — Tactical Problem Solving">♘</div>
+            <div class="orbit-node n4" title="Rook — Full-Stack Infrastructure">♖</div>
+          </div>
+
+          <div class="floating-crest-badge badge-top-right">
+            <span>♔</span>
+            <span data-i="badgeGM">Grandmaster Dev · ELO Tech</span>
+          </div>
+
+          <div class="floating-crest-badge badge-bottom-left">
+            <span>⚡</span>
+            <span data-i="badgeIoT">Python · Flutter · AI &amp; IoT</span>
+          </div>
+
+          <div class="floating-crest-badge badge-bottom-right">
+            <span>⚜</span>
+            <span data-i="badgeLabels">5× Startup Label Laureate</span>
+          </div>
+
+          <div class="portrait-crest-frame">
+            <div class="portrait-inner-mask">
+              <img src="images/profile_grandmaster.jpg" alt="Lecheheb Djaafar Sovereign Portrait" id="hero-portrait-img">
+            </div>
+          </div>
+        </div>
+
+        <div class="portrait-aura-controls" role="group" aria-label="Portrait Visual Aura">
+          <span style="color:var(--gold-primary);font-family:var(--font-mono);font-size:11px;" data-i="auraLabel">هالة البروفايل:</span>
+          <button type="button" class="aura-pill active" data-aura-btn="gold" data-i="auraGold">ملكي ذهبي</button>
+          <button type="button" class="aura-pill" data-aura-btn="pure" data-i="auraPure">كلاسيكي نقي</button>
+          <button type="button" class="aura-pill" data-aura-btn="cyber" data-i="auraCyber">طيف سيبراني</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="citadel-section">
+    <div class="wrap">
+      <div class="section-header reveal-up">
+        <div class="section-coord"><span>♔</span> <span>RANK 08 · THE CITADEL DOCTRINE &amp; ARSENAL</span></div>
+        <h2 class="section-title" data-i="aboutTitle">فلسفة البناء: حين تلتقي حكمة العصور الوسطى بهندسة المستقبل</h2>
+        <p class="section-desc" data-i="aboutSub">
+          كل قطعة على رقعة الشطرنج تمثل طبقة تقنية متكاملة في ترسانتي البرمجية؛ من حصون القواعد الخلفية (Rook) إلى مناورات الذكاء الاصطناعي التكتيكية (Knight).
+        </p>
+        <div class="gothic-divider"><span style="color:var(--gold-primary)">⚜ ♔ ⚜</span></div>
+      </div>
+
+      <div class="arsenal-layout">
+        <div class="codex-scroll-card reveal-up">
+          <p data-i="bioP1">
+            درست الإعلام الآلي في جامعة قاصدي مرباح بورقلة، وتخرجت بشهادة الماستر في الإعلام الآلي الأساسي سنة 2025 بتقدير امتياز (With Distinction). منذ عام 2021، خضت معارك برمجية حقيقية كمطور مستقل عبر منصات Mostaql وUpwork وFiverr، أثمرت عن تسليم أكثر من 30 تطبيقاً ومنصة لأكثر من 30 عميلاً.
+          </p>
+          <p data-i="bioP2">
+            تُوّج مشروع تخرجي ببناء نموذج أولي حي (Functional Prototype) لنظام ري محوري ذكي للمناطق القاحلة يدمج بين إنترنت الأشياء (ESP32/Sensors)، الذكاء الاصطناعي (TensorFlow)، والطاقة الشمسية — وحصل على وسم مشروع ناشئ (Label Startup)، إلى جانب 4 أوسمة Startup أخرى كعضو وموجه للمشاريع الطلابية.
+          </p>
+          <p data-i="bioP3">
+            كما أدّيت الخدمة الوطنية في إدارة وتسيير مصلحة الأرشيف (2025–2026)، حيث قدت عمليات الفرز، الجرد، والرقمنة المنهجية للوثائق، إضافة إلى تربصين ميدانيين في شركة سوناطراك (حاسي مسعود وبركاوي).
+          </p>
+
+          <div class="codex-art-showcase">
+            <div class="codex-art-item">
+              <img src="images/vault/chess_king_obsidian.jpg" alt="Obsidian Chess King Architecture">
+              <div class="codex-art-caption">♔ Sovereign Backend Architecture</div>
+            </div>
+            <div class="codex-art-item">
+              <img src="images/vault/astrolabe_iot.jpg" alt="Astrolabe Smart Irrigation IoT">
+              <div class="codex-art-caption">⚜ Smart Oasis IoT &amp; AI Astrolabe</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chess-skills-grid reveal-up">
+          <div class="chess-skill-card">
+            <div class="skill-piece-header">
+              <div class="piece-icon-box">♔</div>
+              <span class="piece-Square-tag">FILE E1 · SOVEREIGN CORE</span>
+            </div>
+            <h3 data-i="sk1Title">هندسة الويب والأنظمة الشاملة</h3>
+            <div class="skill-pill-wrap">
+              <span class="skill-pill">Python (Advanced)</span>
+              <span class="skill-pill">Django</span>
+              <span class="skill-pill">Flask</span>
+              <span class="skill-pill">JavaScript (ES6+)</span>
+              <span class="skill-pill">HTML5 / CSS3</span>
+              <span class="skill-pill">Tailwind &amp; Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="chess-skill-card">
+            <div class="skill-piece-header">
+              <div class="piece-icon-box">♕</div>
+              <span class="piece-Square-tag">FILE D1 · ROYAL VISION</span>
+            </div>
+            <h3 data-i="sk2Title">الذكاء الاصطناعي والتعلم العميق</h3>
+            <div class="skill-pill-wrap">
+              <span class="skill-pill">Deep Learning</span>
+              <span class="skill-pill">Neural Networks</span>
+              <span class="skill-pill">TensorFlow</span>
+              <span class="skill-pill">AI Engineering (Udemy '25)</span>
+              <span class="skill-pill">NVIDIA Deep Learning</span>
+            </div>
+          </div>
+
+          <div class="chess-skill-card">
+            <div class="skill-piece-header">
+              <div class="piece-icon-box">♘</div>
+              <span class="piece-Square-tag">FILE G1 · TACTICAL LEAP</span>
+            </div>
+            <h3 data-i="sk3Title">إنترنت الأشياء والأنظمة المدمجة</h3>
+            <div class="skill-pill-wrap">
+              <span class="skill-pill">ESP32 &amp; Arduino</span>
+              <span class="skill-pill">MQTT Protocol</span>
+              <span class="skill-pill">ThingsBoard</span>
+              <span class="skill-pill">Solar Energy IoT</span>
+              <span class="skill-pill">C / C++</span>
+            </div>
+          </div>
+
+          <div class="chess-skill-card">
+            <div class="skill-piece-header">
+              <div class="piece-icon-box">♗</div>
+              <span class="piece-Square-tag">FILE C1 · DIAGONAL REACH</span>
+            </div>
+            <h3 data-i="sk4Title">تطبيقات الموبايل والمنصات العابرة</h3>
+            <div class="skill-pill-wrap">
+              <span class="skill-pill">Flutter</span>
+              <span class="skill-pill">Dart</span>
+              <span class="skill-pill">Firebase Auth/RTDB</span>
+              <span class="skill-pill">Responsive Mobile UX</span>
+              <span class="skill-pill">Java</span>
+            </div>
+          </div>
+
+          <div class="chess-skill-card">
+            <div class="skill-piece-header">
+              <div class="piece-icon-box">♖</div>
+              <span class="piece-Square-tag">FILE A1 · CITADEL FORTRESS</span>
+            </div>
+            <h3 data-i="sk5Title">قواعد البيانات والبنية التحتية</h3>
+            <div class="skill-pill-wrap">
+              <span class="skill-pill">MySQL &amp; SQLite</span>
+              <span class="skill-pill">NoSQL / Firebase</span>
+              <span class="skill-pill">Data Modeling</span>
+              <span class="skill-pill">Docker &amp; Linux</span>
+              <span class="skill-pill">Git / GitHub</span>
+            </div>
+          </div>
+
+          <div class="chess-skill-card">
+            <div class="skill-piece-header">
+              <div class="piece-icon-box">♙</div>
+              <span class="piece-Square-tag">FILE H8 · PROMOTION</span>
+            </div>
+            <h3 data-i="sk6Title">القيادة، اللغات، وإدارة المشاريع</h3>
+            <div class="skill-pill-wrap">
+              <span class="skill-pill">5× Startup Labels</span>
+              <span class="skill-pill">Jira &amp; Trello</span>
+              <span class="skill-pill">Arabic (Native)</span>
+              <span class="skill-pill">English (B2)</span>
+              <span class="skill-pill">French (Working)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chronicles" class="citadel-section">
+    <div class="wrap">
+      <div class="section-header reveal-up">
+        <div class="section-coord"><span>♘</span> <span>RANK 06 · ROYAL CHRONICLES &amp; LIVE TACTICS</span></div>
+        <h2 class="section-title" data-i="chronTitle">سجل الفتوحات المهنية وتحدي الشطرنج التفاعلي</h2>
+        <p class="section-desc" data-i="chronSub">
+          تدرّج استراتيجي من التكوين الأكاديمي والعمل الحر العالمي إلى ريادة المشاريع الناشئة، مع رقعة شطرنج حية لاختبار بصيرتك التكتيكية.
+        </p>
+        <div class="gothic-divider"><span style="color:var(--gold-primary)">⚔ ♘ ⚔</span></div>
+      </div>
+
+      <div class="chronicle-chess-split">
+        <ul class="timeline-royal reveal-up">
+          <li class="timeline-node" data-piece="♔">
+            <div class="tl-meta">
+              <span class="tl-time">2025 – 2026</span>
+              <span class="tl-coord">MOVE 05 · ARCHIVE COMMAND</span>
+            </div>
+            <h3 data-i="tl1Title">الخدمة الوطنية — تسيير وإدارة مصلحة الأرشيف</h3>
+            <p data-i="tl1Desc">قيادة عمليات الفرز، الجرد الشامل، والرقمنة المنهجية للأرشيف والوثائق الإدارية وتنظيم قواعد بياناتها.</p>
+          </li>
+
+          <li class="timeline-node" data-piece="♕">
+            <div class="tl-meta">
+              <span class="tl-time">2024 – 2025</span>
+              <span class="tl-coord">MOVE 04 · MASTER'S LAUREATE</span>
+            </div>
+            <h3 data-i="tl2Title">ماستر في الإعلام الآلي (بتقدير امتياز) — جامعة قاصدي مرباح، ورقلة</h3>
+            <p data-i="tl2Desc">تخرج بمرتبة الشرف مع إنجاز نموذج أولي لنظام ري محوري ذكي للمناطق الجافة (IoT + AI + طاقة شمسية) متوج بوسم Label Startup.</p>
+          </li>
+
+          <li class="timeline-node" data-piece="♖">
+            <div class="tl-meta">
+              <span class="tl-time">2021 – Present</span>
+              <span class="tl-coord">MOVE 03 · GLOBAL FREELANCE</span>
+            </div>
+            <h3 data-i="tl3Title">مطور Full-Stack مستقل — Mostaql, Upwork &amp; Fiverr</h3>
+            <p data-i="tl3Desc">تطوير وتسليم أكثر من 30 تطبيق ويب وموبايل ومنظومة برمجية لأكثر من 30 عميلاً وشركة ناشئة باستخدام Python, Django, Flask, Flutter وJavaScript.</p>
+          </li>
+
+          <li class="timeline-node" data-piece="♘">
+            <div class="tl-meta">
+              <span class="tl-time">2022</span>
+              <span class="tl-coord">MOVE 02 · INDUSTRIAL OPS</span>
+            </div>
+            <h3 data-i="tl4Title">متربص في الأنظمة المعلوماتية — سوناطراك (حاسي مسعود وبركاوي)</h3>
+            <p data-i="tl4Desc">تربصان ميدانيان في حوض الحمراء (حاسي مسعود) وبركاوي لدعم أنظمة المعلومات الصناعية وصيانة البنية التحتية الشبكية.</p>
+          </li>
+
+          <li class="timeline-node" data-piece="♙">
+            <div class="tl-meta">
+              <span class="tl-time">2020 – 2023</span>
+              <span class="tl-coord">MOVE 01 · FOUNDATION</span>
+            </div>
+            <h3 data-i="tl5Title">ليسانس في الإعلام الآلي — جامعة قاصدي مرباح، ورقلة</h3>
+            <p data-i="tl5Desc">تأسيس متين في الخوارزميات، هياكل البيانات، هندسة البرمجيات، والشبكات، مع التتويج بـ 5 أوسمة Startup كمبتكر وموجه.</p>
+          </li>
+        </ul>
+
+        <div class="tactician-sanctum reveal-up">
+          <div class="sanctum-top">
+            <div class="sanctum-title">
+              <span>♟</span>
+              <span data-i="chessWidgetTitle">مناورة الأستاذ الكبير (تحدي الشطرنج)</span>
+            </div>
+            <span class="sanctum-status" id="chess-status-badge" data-i="chessTurnWhite">دور الأبيض: كش مات في نقلة!</span>
+          </div>
+
+          <div class="chessboard-frame">
+            <div class="mini-chessboard" id="tactical-board" role="grid" aria-label="Interactive Tactical Chessboard"></div>
+          </div>
+
+          <div class="sanctum-controls">
+            <p class="sanctum-hint" id="chess-hint-text" data-i="chessHintDefault">
+              انقر على القطعة البيضاء (♕ أو ♘ أو ♖) ثم اختر المربع الهدف لتنفيذ الضربة القاضية أو العب بحرية!
+            </p>
+            <div style="display:flex;gap:6px;">
+              <button type="button" class="proj-inspect-btn" id="chess-puzzle-btn" data-i="chessNextPuzzle">تحدي جديد ♘</button>
+              <button type="button" class="proj-inspect-btn" id="chess-reset-btn" data-i="chessReset">إعادة الرقعة ↺</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="citadel-section">
+    <div class="wrap">
+      <div class="section-header reveal-up">
+        <div class="section-coord"><span>♖</span> <span>RANK 04 · THE GRAND ARMORY OF DEPLOYMENTS</span></div>
+        <h2 class="section-title" data-i="projSectionTitle">ترسانة المشاريع والأنظمة الحية (27 مشروعاً موثقاً)</h2>
+        <p class="section-desc" data-i="projSectionSub">
+          من محركات الشطرنج المتقدمة وأنظمة الري بالذكاء الاصطناعي إلى المتاجر الفاخرة والمنصات المالية — تصفح أو ابحث أو افحص كل مشروع.
+        </p>
+        <div class="gothic-divider"><span style="color:var(--gold-primary)">⚜ ♖ ⚜</span></div>
+      </div>
+
+      <div class="armory-toolbar reveal-up">
+        <div class="filter-pills" role="tablist">
+          <button type="button" class="filter-btn active" data-filter="all"><span>⚜</span> <span data-i="fAll">الكل (27)</span></button>
+          <button type="button" class="filter-btn" data-filter="chess"><span>♔</span> <span data-i="fChess">محركات الشطرنج والذكاء</span></button>
+          <button type="button" class="filter-btn" data-filter="app"><span>♖</span> <span data-i="fApp">منصات وتطبيقات</span></button>
+          <button type="button" class="filter-btn" data-filter="shop"><span>♕</span> <span data-i="fShop">تجارة إلكترونية فاخرة</span></button>
+          <button type="button" class="filter-btn" data-filter="web"><span>♗</span> <span data-i="fWeb">مواقع الشركات والوكالات</span></button>
+        </div>
+
+        <div class="search-box-wrap">
+          <input type="search" id="project-search" class="search-input" placeholder="ابحث عن مشروع أو تقنية (مثل Chess, AI, Python)...">
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projects-grid"></div>
+
+      <div style="text-align:center;margin-top:34px;">
+        <button type="button" class="btn-citadel" id="toggle-all-projects"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="vault" class="citadel-section">
+    <div class="wrap">
+      <div class="section-header reveal-up">
+        <div class="section-coord"><span>♕</span> <span>RANK 03 · THE ROYAL ILLUMINATED VAULT (20 ARTWORKS)</span></div>
+        <h2 class="section-title" data-i="vaultTitle">الرواق الملكي المصوّر: 20 لوحة تجمع العصور الوسطى والشطرنج والتقنية</h2>
+        <p class="section-desc" data-i="vaultSub">
+          صُممت هذه اللوحات العشرون خصيصاً لملء أروقة الموقع بهوية بصرية تساوي 10,000 دولار، حيث تعبّر كل لوحة عن ركن من أركان خبرتي الهندسية. انقر على أي لوحة لتكبيرها.
+        </p>
+        <div class="gothic-divider"><span style="color:var(--gold-primary)">⚜ ♕ ⚜</span></div>
+      </div>
+
+      <div class="vault-gallery-grid" id="vault-grid"></div>
+    </div>
+  </section>
+
+  <section id="cv-vault" class="citadel-section">
+    <div class="wrap">
+      <div class="section-header reveal-up">
+        <div class="section-coord"><span>📜</span> <span>RANK 02 · ROYAL PARCHMENTS &amp; CURRICULUM VITAE</span></div>
+        <h2 class="section-title" data-i="cvTitle">خزانة السير الذاتية والمخطوطات الرسمية</h2>
+        <p class="section-desc" data-i="cvSub">
+          اختر النسخة الملائمة لتخصصك أو قم بتحميل السيرة الذاتية الرسمية الكاملة بصيغة PDF.
+        </p>
+      </div>
+
+      <div class="cv-scrolls-grid" id="cv-scrolls-grid"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="citadel-section" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="contact-citadel-box reveal-up">
+        <div>
+          <div class="section-coord"><span>♗</span> <span>RANK 01 · ROYAL AUDIENCE &amp; ALLIANCES</span></div>
+          <h2 class="section-title" data-i="contactTitle">هل أنت مستعد لحسم النقلة القادمة لصالح مشروعك؟</h2>
+          <p class="section-desc" data-i="contactSub">
+            سواء كنت تبحث عن مهندس برمجيات شامل، أو بناء نظام ذكي، أو تصميم موقع يبهر عملاءك من اللحظة الأولى — راسلني بالعربية أو الإنجليزية أو الفرنسية.
+          </p>
+
+          <a href="mailto:djaafardjaafarlolo@gmail.com" class="email-royal-banner">
+            <span>✉</span>
+            <span>djaafardjaafarlolo@gmail.com</span>
+          </a>
+
+          <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;">
+            <a href="tel:+213658301420" class="btn-citadel" style="direction:ltr;">
+              <span>📞</span> <span>+213 658 30 14 20</span>
+            </a>
+            <button type="button" class="btn-royal" id="copy-email-btn">
+              <span>⚜</span> <span data-i="copyEmailBtn">نسخ البريد الرسمي</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="social-alliances-grid">
+          <a href="https://github.com/LechehebDjaafar" target="_blank" rel="noopener" class="social-seal-link">
+            <span class="seal-glyph">♖</span>
+            <div>
+              <div>GitHub</div>
+              <small style="color:var(--text-muted);font-size:11px;">@LechehebDjaafar</small>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/lecheheb-djaafar-226594348/" target="_blank" rel="noopener" class="social-seal-link">
+            <span class="seal-glyph">♔</span>
+            <div>
+              <div>LinkedIn</div>
+              <small style="color:var(--text-muted);font-size:11px;">Lecheheb Djaafar</small>
+            </div>
+          </a>
+          <a href="https://www.chess.com/member/owndagame" target="_blank" rel="noopener" class="social-seal-link">
+            <span class="seal-glyph">♘</span>
+            <div>
+              <div>Chess.com Arena</div>
+              <small style="color:var(--text-muted);font-size:11px;">@owndagame</small>
+            </div>
+          </a>
+          <a href="https://www.kaggle.com/djaafarlechehebdl" target="_blank" rel="noopener" class="social-seal-link">
+            <span class="seal-glyph">♕</span>
+            <div>
+              <div>Kaggle Data &amp; AI</div>
+              <small style="color:var(--text-muted);font-size:11px;">@djaafarlechehebdl</small>
+            </div>
+          </a>
+          <a href="https://app.intigriti.com/profile/djaafar_devman" target="_blank" rel="noopener" class="social-seal-link">
+            <span class="seal-glyph">🛡</span>
+            <div>
+              <div>Intigriti Security</div>
+              <small style="color:var(--text-muted);font-size:11px;">@djaafar_devman</small>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@CodeCraftDL" target="_blank" rel="noopener" class="social-seal-link">
+            <span class="seal-glyph">▶</span>
+            <div>
+              <div>YouTube Channel</div>
+              <small style="color:var(--text-muted);font-size:11px;">@CodeCraftDL</small>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/ddos_attack_co/" target="_blank" rel="noopener" class="social-seal-link">
+            <span class="seal-glyph">✦</span>
+            <div>
+              <div>Instagram</div>
+              <small style="color:var(--text-muted);font-size:11px;">@ddos_attack_co</small>
+            </div>
+          </a>
+          <a href="https://web.facebook.com/djaafarlecheheb20" target="_blank" rel="noopener" class="social-seal-link">
+            <span class="seal-glyph">⚜</span>
+            <div>
+              <div>Facebook</div>
+              <small style="color:var(--text-muted);font-size:11px;">djaafarlecheheb20</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>♔ <strong>LECHEHEB DJAAFAR</strong> — The Grandmaster's Citadel Edition · Crafted with Medieval Precision &amp; Modern Engineering · Ouargla, Algeria © 2026–2027</p>
+  </div>
+</footer>
+
+<nav class="mobile-grandmaster-dock" aria-label="Mobile Quick Navigation">
+  <a href="#top" class="dock-item active">
+    <span class="dock-piece">♔</span>
+    <span data-i="dockTop">العرش</span>
+  </a>
+  <a href="#about" class="dock-item">
+    <span class="dock-piece">♕</span>
+    <span data-i="dockSkills">الترسانة</span>
+  </a>
+  <a href="#chronicles" class="dock-item">
+    <span class="dock-piece">♘</span>
+    <span data-i="dockChess">الشطرنج</span>
+  </a>
+  <a href="#projects" class="dock-item">
+    <span class="dock-piece">♖</span>
+    <span data-i="dockProj">المشاريع</span>
+  </a>
+  <a href="#vault" class="dock-item">
+    <span class="dock-piece">⚜</span>
+    <span data-i="dockVault">المعرض</span>
+  </a>
+  <a href="#contact" class="dock-item">
+    <span class="dock-piece">♗</span>
+    <span data-i="dockContact">تواصل</span>
+  </a>
+</nav>
+
+<div class="citadel-modal-backdrop" id="inspector-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="citadel-modal-box">
+    <div class="modal-media">
+      <img src="images/vault/citadel_hero.jpg" alt="Preview" id="modal-img">
+    </div>
+    <div class="modal-content">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;">
+        <span class="proj-tag" id="modal-badge">RANK E4</span>
+        <button type="button" class="proj-inspect-btn" id="modal-close-btn">✕ Close</button>
+      </div>
+      <h3 id="modal-title" style="font-size:22px;font-weight:800;margin-bottom:8px;color:var(--text-ivory);"></h3>
+      <p id="modal-desc" style="color:var(--text-parchment);font-size:15px;margin-bottom:18px;"></p>
+      <div id="modal-actions-wrap" style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="#projects" target="_blank" rel="noopener" class="btn-royal" id="modal-live-link">
+          <span>♖</span> <span data-i="openLiveBtn">فتح المشروع الحي</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const I18N = {
+  brandSub: ['GRANDMASTER ARCHITECT · E4', 'GRANDMASTER ARCHITECT · E4', 'ARCHITECTE GRAND MAÎTRE · E4'],
+  navAbout: ['القلعة والمهارات', 'Citadel & Arsenal', 'Citadelle & Arsenal'],
+  navChronicles: ['السجل والشطرنج', 'Chronicles & Chess', 'Chroniques & Échecs'],
+  navProjects: ['ترسانة المشاريع', 'Grand Armory', 'Armurerie des Projets'],
+  navVault: ['المعرض الملكي (20)', 'Royal Vault (20)', 'Galerie Royale (20)'],
+  navContact: ['الديوان والتواصل', 'Royal Audience', 'Audience & Contact'],
+  heroBadge: [
+    'ماستر إعلام آلي بامتياز 2025 · 5 أوسمة Startup · ورقلة، الجزائر',
+    'Master’s in CS with Distinction 2025 · 5× Startup Labels · Ouargla, Algeria',
+    'Master Informatique avec Distinction 2025 · 5× Labels Startup · Ouargla, Algérie'
+  ],
+  heroGreeting: ['لشهب جعفر', 'Lecheheb Djaafar', 'Lecheheb Djaafar'],
+  heroHeadline: [
+    'مهندس الأنظمة الاستراتيجية والذكاء الاصطناعي',
+    'Grandmaster of Full-Stack, AI & IoT Architecture',
+    'Grand Maître en Architecture Full-Stack, IA & IoT'
+  ],
+  heroLead: [
+    'خريج ماستر إعلام آلي (دفعة 2025 بتقدير امتياز) من جامعة قاصدي مرباح بورقلة. أبني الأنظمة الرقمية، تطبيقات الويب والموبايل، وحلول إنترنت الأشياء المدعومة بالذكاء الاصطناعي كما يُدير أستاذ الشطرنج رقعته: بدقة هندسية، بصيرة استباقية، وإتقان ملكي لا يقبل المساومة.',
+    'Computer Science Master’s graduate (Class of 2025, With Distinction) from Kasdi Merbah University, Ouargla. I architect web platforms, mobile apps, and AI-powered IoT systems the way a Grandmaster commands the board: with surgical precision, foresight, and sovereign craftsmanship.',
+    'Diplômé d’un Master en Informatique (Promotion 2025, avec distinction) de l’Université Kasdi Merbah d’Ouargla. Je conçois des systèmes web, mobiles et des prototypes IoT dotés d’IA comme un Grand Maître dirige son échiquier : avec précision chirurgicale et excellence.'
+  ],
+  ctaExplore: ['استكشف ترسانة الأعمال (27 مشروعاً)', 'Explore the Grand Armory (27 Projects)', 'Explorer l’Armurerie (27 Projets)'],
+  ctaCV: ['خزانة السير الذاتية والوثائق', 'Royal CV Parchments', 'Parchemins CV Officiels'],
+  ctaContact: ['راسل الديوان مباشرة', 'Summon Direct Counsel', 'Me Contacter Directement'],
+  m1: ['مشروعاً وعميلاً منذ 2021', 'Projects & Clients Since 2021', 'Projets & Clients depuis 2021'],
+  m2: ['أوسمة مشاريع ناشئة (Startup)', 'Official Startup Labels Won', 'Labels Startup Obtenus'],
+  m3: ['ماستر بامتياز — ورقلة', 'Master’s w/ Distinction', 'Master avec Distinction'],
+  m4: ['لوحة فنية وتقنية بالمعرض', 'Bespoke Illuminated Plates', 'Œuvres & Planches Royales'],
+  badgeGM: ['أستاذ البناء البرمجي · ELO Tech', 'Grandmaster Dev · ELO Tech', 'Grand Maître Dev · ELO Tech'],
+  badgeIoT: ['Python · Flutter · AI & IoT', 'Python · Flutter · AI & IoT', 'Python · Flutter · IA & IoT'],
+  badgeLabels: ['حائز 5 أوسمة Startup', '5× Startup Label Laureate', '5× Lauréat Label Startup'],
+  auraLabel: ['هالة البروفايل:', 'Portrait Aura:', 'Aura du Portrait :'],
+  auraGold: ['ملكي ذهبي', 'Sovereign Gold', 'Or Souverain'],
+  auraPure: ['كلاسيكي نقي', 'Obsidian Noir', 'Noir Obsidienne'],
+  auraCyber: ['طيف سيبراني', 'Arcane Cyber', 'Cyber Arcanique'],
+  aboutTitle: [
+    'فلسفة البناء: حين تلتقي حكمة العصور الوسطى بهندسة المستقبل',
+    'The Citadel Doctrine: Where Medieval Mastery Meets Future Engineering',
+    'La Doctrine de la Citadelle : Quand l’Art Médiéval Rencontre le Futur'
+  ],
+  aboutSub: [
+    'كل قطعة على رقعة الشطرنج تمثل طبقة تقنية متكاملة في ترسانتي البرمجية؛ من حصون القواعد الخلفية (Rook) إلى مناورات الذكاء الاصطناعي التكتيكية (Knight).',
+    'Every piece on the chessboard maps to a core pillar of my engineering stack—from fortress backend databases (Rook) to tactical AI & IoT leaps (Knight).',
+    'Chaque pièce de l’échiquier incarne un pilier de mon arsenal technique — des bases de données forteresses (Tour) aux manœuvres IA et IoT (Cavalier).'
+  ],
+  bioP1: [
+    'درست الإعلام الآلي في جامعة قاصدي مرباح بورقلة، وتخرجت بشهادة الماستر في الإعلام الآلي الأساسي سنة 2025 بتقدير امتياز (With Distinction). منذ عام 2021، خضت معارك برمجية حقيقية كمطور مستقل عبر منصات Mostaql وUpwork وFiverr، أثمرت عن تسليم أكثر من 30 تطبيقاً ومنصة لأكثر من 30 عميلاً.',
+    'I studied Computer Science at Kasdi Merbah University in Ouargla, earning my Master’s degree with distinction in 2025. Since 2021, I have operated as a battle-tested freelance developer across Mostaql, Upwork, and Fiverr, delivering 30+ full-scale applications for over 30 clients.',
+    'J’ai étudié l’informatique à l’Université Kasdi Merbah d’Ouargla et obtenu mon Master en 2025 avec distinction. Depuis 2021, j’exerce comme développeur freelance sur Mostaql, Upwork et Fiverr, avec plus de 30 applications livrées à plus de 30 clients.'
+  ],
+  bioP2: [
+    'تُوّج مشروع تخرجي ببناء نموذج أولي حي (Functional Prototype) لنظام ري محوري ذكي للمناطق القاحلة يدمج بين إنترنت الأشياء (ESP32/Sensors)، الذكاء الاصطناعي (TensorFlow)، والطاقة الشمسية — وحصل على وسم مشروع ناشئ (Label Startup)، إلى جانب 4 أوسمة Startup أخرى كعضو وموجه للمشاريع الطلابية.',
+    'My graduation capstone produced a working smart pivot irrigation prototype for arid regions combining IoT (ESP32), AI (TensorFlow), and solar energy—winning an official Startup Label alongside 4 additional Startup Labels earned as a team member and mentor.',
+    'Mon projet de fin d’études a abouti à un prototype fonctionnel de système d’irrigation par pivot intelligent pour zones arides alliant IoT, IA et énergie solaire — récompensé par un Label Startup, ainsi que 4 autres Labels Startup comme membre et mentor.'
+  ],
+  bioP3: [
+    'كما أدّيت الخدمة الوطنية في إدارة وتسيير مصلحة الأرشيف (2025–2026)، حيث قدت عمليات الفرز، الجرد، والرقمنة المنهجية للوثائق، إضافة إلى تربصين ميدانيين في شركة سوناطراك (حاسي مسعود وبركاوي).',
+    'I also completed my national service managing an Archive Department (2025–2026), spearheading inventory and digital transformation of records, following two industrial IT internships at Sonatrach in Hassi Messaoud and Berkaoui.',
+    'J’ai également accompli mon service national à la direction d’un service d’archives (2025–2026), pilotant le tri, l’inventaire et la numérisation, après deux stages informatiques chez Sonatrach à Hassi Messaoud et Berkaoui.'
+  ],
+  sk1Title: ['هندسة الويب والأنظمة الشاملة', 'Full-Stack Web Architecture', 'Architecture Web Full-Stack'],
+  sk2Title: ['الذكاء الاصطناعي والتعلم العميق', 'AI & Deep Neural Networks', 'Intelligence Artificielle & Deep Learning'],
+  sk3Title: ['إنترنت الأشياء والأنظمة المدمجة', 'IoT & Embedded Cyber-Systems', 'IoT & Systèmes Embarqués'],
+  sk4Title: ['تطبيقات الموبايل والمنصات العابرة', 'Cross-Platform Mobile Apps', 'Applications Mobiles Flutter'],
+  sk5Title: ['قواعد البيانات والبنية التحتية', 'Database Fortresses & DevOps', 'Bases de Données & DevOps'],
+  sk6Title: ['القيادة، اللغات، وإدارة المشاريع', 'Leadership, Mentorship & Languages', 'Leadership, Mentorat & Langues'],
+  chronTitle: ['سجل الفتوحات المهنية وتحدي الشطرنج التفاعلي', 'Royal Career Chronicles & Live Tactical Board', 'Chroniques de Carrière & Échiquier Tactique'],
+  chronSub: [
+    'تدرّج استراتيجي من التكوين الأكاديمي والعمل الحر العالمي إلى ريادة المشاريع الناشئة، مع رقعة شطرنج حية لاختبار بصيرتك التكتيكية.',
+    'A strategic progression from academic distinction and global freelancing to Startup Label leadership—paired with a playable tactical chessboard.',
+    'Une progression stratégique de l’excellence académique au freelancing international, accompagnée d’un échiquier tactique interactif.'
+  ],
+  tl1Title: ['الخدمة الوطنية — تسيير وإدارة مصلحة الأرشيف', 'National Service — Archive Department Director', 'Service National — Gestion du Service des Archives'],
+  tl1Desc: [
+    'قيادة عمليات الفرز، الجرد الشامل، والرقمنة المنهجية للأرشيف والوثائق الإدارية وتنظيم قواعد بياناتها.',
+    'Directed full-scale sorting, inventorying, and systematic digitization of institutional archive records.',
+    'Tri, inventaire complet, numérisation systématique et administration du service des archives.'
+  ],
+  tl2Title: ['ماستر في الإعلام الآلي (بتقدير امتياز) — جامعة قاصدي مرباح، ورقلة', 'Master’s in Computer Science (With Distinction) — Ouargla', 'Master en Informatique (Avec Distinction) — Ouargla'],
+  tl2Desc: [
+    'تخرج بمرتبة الشرف مع إنجاز نموذج أولي لنظام ري محوري ذكي للمناطق الجافة (IoT + AI + طاقة شمسية) متوج بوسم Label Startup.',
+    'Graduated with honors. Built a solar-powered AI + IoT smart pivot irrigation prototype awarded a Startup Label.',
+    'Diplômé avec mention. Conception d’un prototype d’irrigation intelligent (IoT, IA, solaire) labellisé Startup.'
+  ],
+  tl3Title: ['مطور Full-Stack مستقل — Mostaql, Upwork & Fiverr', 'Freelance Full-Stack Developer — Mostaql, Upwork & Fiverr', 'Développeur Full-Stack Freelance — Mostaql, Upwork & Fiverr'],
+  tl3Desc: [
+    'تطوير وتسليم أكثر من 30 تطبيق ويب وموبايل ومنظومة برمجية لأكثر من 30 عميلاً وشركة ناشئة باستخدام Python, Django, Flask, Flutter وJavaScript.',
+    'Architected and delivered 30+ web, mobile, and automation systems for 30+ global clients using Python, Django, Flask, Flutter, and JS.',
+    'Développement et livraison de plus de 30 applications web et mobiles pour plus de 30 clients avec Python, Django, Flask, Flutter et JS.'
+  ],
+  tl4Title: ['متربص في الأنظمة المعلوماتية — سوناطراك (حاسي مسعود وبركاوي)', 'Industrial IT Intern — Sonatrach (Hassi Messaoud & Berkaoui)', 'Stagiaire Informatique — Sonatrach (Hassi Messaoud & Berkaoui)'],
+  tl4Desc: [
+    'تربصان ميدانيان في حوض الحمراء (حاسي مسعود) وبركاوي لدعم أنظمة المعلومات الصناعية وصيانة البنية التحتية الشبكية.',
+    'Completed two 15-day field internships supporting industrial information systems and network infrastructure.',
+    'Deux stages pratiques de 15 jours en support des systèmes d’information industriels et maintenance réseau.'
+  ],
+  tl5Title: ['ليسانس في الإعلام الآلي — جامعة قاصدي مرباح، ورقلة', 'Bachelor’s in Computer Science — Kasdi Merbah University', 'Licence en Informatique — Université Kasdi Merbah, Ouargla'],
+  tl5Desc: [
+    'تأسيس متين في الخوارزميات، هياكل البيانات، هندسة البرمجيات، والشبكات، مع التتويج بـ 5 أوسمة Startup كمبتكر وموجه.',
+    'Strong foundation in algorithms, software engineering, and networks, culminating in 5 Startup Labels as founder and mentor.',
+    'Socle solide en algorithmique, génie logiciel et réseaux, couronné par 5 Labels Startup en tant que porteur et mentor.'
+  ],
+  chessWidgetTitle: ['مناورة الأستاذ الكبير (تحدي الشطرنج)', 'Grandmaster’s Gambit (Live Chess)', 'Gambit du Grand Maître (Échecs)'],
+  chessTurnWhite: ['دور الأبيض: كش مات في نقلة!', 'White to Move: Mate in 1!', 'Trait aux Blancs : Mat en 1 !'],
+  chessHintDefault: [
+    'انقر على القطعة البيضاء ثم اختر المربع الهدف لتنفيذ الضربة القاضية أو العب بحرية على الرقعة!',
+    'Click a White piece then select a target square to deliver the winning tactical strike or play freely!',
+    'Cliquez sur une pièce blanche puis sur une case cible pour porter le coup décisif ou jouer librement !'
+  ],
+  chessNextPuzzle: ['تحدي جديد ♘', 'Next Tactic ♘', 'Autre Tactique ♘'],
+  chessReset: ['إعادة الرقعة ↺', 'Reset Board ↺', 'Réinitialiser ↺'],
+  projSectionTitle: ['ترسانة المشاريع والأنظمة الحية (27 مشروعاً موثقاً)', 'The Grand Armory of Deployments (27 Verified Projects)', 'L’Armurerie des Projets (27 Réalisations)'],
+  projSectionSub: [
+    'من محركات الشطرنج المتقدمة وأنظمة الري بالذكاء الاصطناعي إلى المتاجر الفاخرة والمنصات المالية — تصفح أو ابحث أو افحص كل مشروع.',
+    'From JavaScript chess engines and AI smart irrigation to luxury e-commerce and fintech platforms—filter, search, or inspect every deployment.',
+    'Des moteurs d’échecs et systèmes d’irrigation IA aux boutiques de luxe et plateformes financières — filtrez, cherchez ou inspectez chaque projet.'
+  ],
+  fAll: ['الكل (27)', 'All Works (27)', 'Tous (27)'],
+  fChess: ['الشطرنج والذكاء الاصطناعي', 'Chess & AI / IoT', 'Échecs, IA & IoT'],
+  fApp: ['منصات وتطبيقات', 'Platforms & Apps', 'Plateformes & Apps'],
+  fShop: ['تجارة إلكترونية فاخرة', 'Luxury E-Commerce', 'E-Commerce & Boutiques'],
+  fWeb: ['مواقع الشركات والوكالات', 'Corporate & Agencies', 'Sites Corporate & Agences'],
+  vaultTitle: [
+    'الرواق الملكي المصوّر: 20 لوحة تجمع العصور الوسطى والشطرنج والتقنية',
+    'The Royal Illuminated Vault: 20 Bespoke Medieval-Chess-Tech Plates',
+    'La Galerie Royale Illuminée : 20 Planches Médiévales-Échecs-Tech'
+  ],
+  vaultSub: [
+    'صُممت هذه اللوحات العشرون خصيصاً لملء أروقة الموقع بهوية بصرية تساوي 10,000 دولار، حيث تعبّر كل لوحة عن ركن من أركان خبرتي الهندسية. انقر على أي لوحة لتكبيرها.',
+    'These 20 bespoke plates were crafted specifically to infuse every corridor of the site with a $10,000 visual identity. Click any plate to inspect in full resolution.',
+    'Ces 20 œuvres sur mesure ont été créées pour conférer au site une identité visuelle digne d’une production à 10 000 $. Cliquez sur une planche pour l’agrandir.'
+  ],
+  cvTitle: ['خزانة السير الذاتية والمخطوطات الرسمية', 'Royal Parchments & Curriculum Vitae Vault', 'Parchemins Officiels & Curriculum Vitae'],
+  cvSub: [
+    'اختر النسخة الملائمة لتخصصك أو قم بتحميل السيرة الذاتية الرسمية الكاملة بصيغة PDF.',
+    'Select the tailored curriculum vitae scroll matching your domain or download the master dossier.',
+    'Choisissez la version adaptée à votre domaine ou téléchargez le CV principal en PDF.'
+  ],
+  contactTitle: ['هل أنت مستعد لحسم النقلة القادمة لصالح مشروعك؟', 'Ready to Make the Winning Move for Your Next Venture?', 'Prêt à Jouer le Coup Gagnant pour Votre Projet ?'],
+  contactSub: [
+    'سواء كنت تبحث عن مهندس برمجيات شامل، أو بناء نظام ذكي، أو تصميم موقع يبهر عملاءك من اللحظة الأولى — راسلني بالعربية أو الإنجليزية أو الفرنسية.',
+    'Whether you need a Full-Stack Architect, an AI/IoT prototype, or a jaw-dropping web experience—reach out in Arabic, English, or French.',
+    'Que vous cherchiez un architecte Full-Stack, un système IA/IoT ou un site web d’exception — écrivez-moi en arabe, anglais ou français.'
+  ],
+  copyEmailBtn: ['نسخ البريد الرسمي', 'Copy Official Email', 'Copier l’Email Officiel'],
+  openLiveBtn: ['فتح المشروع الحي', 'Launch Live Deployment', 'Ouvrir le Projet en Direct'],
+  dockTop: ['العرش', 'Citadel', 'Citadelle'],
+  dockSkills: ['الترسانة', 'Arsenal', 'Arsenal'],
+  dockChess: ['الشطرنج', 'Chess', 'Échecs'],
+  dockProj: ['المشاريع', 'Armory', 'Projets'],
+  dockVault: ['المعرض', 'Vault', 'Galerie'],
+  dockContact: ['تواصل', 'Counsel', 'Contact']
+};
+
+const BASE_GH = 'https://lechehebdjaafar.github.io/';
+const PROJECTS_DATA = [
+  {
+    name: "AI-Powered Smart Irrigation",
+    cat: "chess",
+    rank: "♔ E8",
+    tags: ["Python", "ESP32", "TensorFlow", "Solar IoT"],
+    desc: [
+      "نظام ري محوري ذكي يعتمد على الذكاء الاصطناعي وإنترنت الأشياء والطاقة الشمسية لتحسين استهلاك المياه في المناطق القاحلة — مشروع التخرج الحائز على وسم Startup.",
+      "AI & IoT smart pivot irrigation prototype powered by solar energy to optimize water consumption in arid regions — Startup Label graduation project.",
+      "Système d’irrigation par pivot intelligent combinant IA, IoT et énergie solaire pour les zones arides — Projet de fin d’études labellisé Startup."
+    ],
+    img: "images/projects/Photo du prototype.png",
+    link: BASE_GH + "smart_pivot/"
+  },
+  {
+    name: "Web Professional Chess Game",
+    cat: "chess",
+    rank: "♕ D8",
+    tags: ["JavaScript", "HTML5", "Chess Engine", "DjaafarOS"],
+    desc: [
+      "لعبة شطرنج احترافية متكاملة تعمل في المتصفح ضمن بيئة DjaafarOS التفاعلية مع منطق حركات وقواعد شطرنج كاملة.",
+      "Full-featured browser chess game and interactive DjaafarOS desktop environment with complete legal move validation.",
+      "Jeu d’échecs professionnel complet intégré à l’environnement interactif DjaafarOS avec validation complète des règles."
+    ],
+    img: "images/projects/Web_professional-chess-game.png",
+    link: BASE_GH + "DjaafarOS-Portfolio/"
+  },
+  {
+    name: "Fenrix Chess Engine",
+    cat: "chess",
+    rank: "♘ F6",
+    tags: ["JavaScript", "Chess Engine", "Algorithms", "FEN"],
+    desc: [
+      "محرك شطرنج متقدم مكتوب بلغة JavaScript لتحليل الوضعيات وتوليد النقلات، قابل للدمج في أي منصة ويب.",
+      "Advanced custom JavaScript chess engine supporting FEN parsing, move generation, and tactical evaluation.",
+      "Moteur d’échecs avancé en JavaScript supportant l’analyse FEN et l’évaluation tactique temps réel."
+    ],
+    img: "images/projects/fenrix.png",
+    link: "https://github.com/LechehebDjaafar/fenrix"
+  },
+  {
+    name: "Chess Opponent Scout",
+    cat: "chess",
+    rank: "♗ C4",
+    tags: ["JavaScript", "Chess Analytics", "Opponent Prep"],
+    desc: [
+      "أداة استطلاعية لتحليل أسلوب الخصوم في الشطرنج وكشف الافتتاحيات ونقاط الضعف التكتيكية قبل المباريات.",
+      "Tactical scouting web tool to analyze chess opponents, opening repertoires, and strategic tendencies.",
+      "Outil d’analyse tactique permettant d’étudier le style et les ouvertures d’un adversaire aux échecs."
+    ],
+    img: "images/projects/chess-opponent-scout.png",
+    link: BASE_GH + "chess-opponent-scout/"
+  },
+  {
+    name: "The Reciters Library V0.1",
+    cat: "app",
+    rank: "♖ A8",
+    tags: ["JavaScript", "Audio Streaming", "Islamic Archive"],
+    desc: [
+      "مكتبة صوتية رقمية لتلاوات القرآن الكريم لنخبة من القراء مع مشغل صوتي متقدم وواجهة تصفح روحانية هادئة.",
+      "Digital Quranic audio library featuring renowned reciters, custom waveform player, and seamless surah filtering.",
+      "Bibliothèque numérique de récitations du Coran avec lecteur audio fluide et recherche rapide."
+    ],
+    img: "images/projects/The-Reciters-Library_V_0.1.png",
+    link: BASE_GH + "The-Reciters-Library_V_0.1/"
+  },
+  {
+    name: "Rafik Tawriq Platform",
+    cat: "app",
+    rank: "♖ H8",
+    tags: ["Web Platform", "GovTech", "Document Workflow"],
+    desc: [
+      "منصة رقمية لتبسيط خدمات التوريق والإجراءات الإدارية والوثائق للمستخدمين بواجهة ذكية وواضحة.",
+      "Digital administrative service platform streamlining document processing and citizen workflows.",
+      "Plateforme numérique simplifiant les démarches administratives et la gestion documentaire."
+    ],
+    img: "images/projects/rafik-tawriq-platform.png",
+    link: BASE_GH + "rafik-tawriq-platform/"
+  },
+  {
+    name: "InvestMe Finance",
+    cat: "app",
+    rank: "♕ D4",
+    tags: ["Fintech", "Investment", "Portfolio UI"],
+    desc: [
+      "منصة استثمارية رقمية تعرض الفرص والخطط المالية ومؤشرات العائد بواجهة تبعث على الثقة والاحترافية.",
+      "Fintech investment portal showcasing capital growth plans, ROI analytics, and investor onboarding.",
+      "Portail d’investissement financier présentant des plans de placement et analyses de rendement."
+    ],
+    img: "images/projects/web_InvestMe.png",
+    link: BASE_GH + "web_InvestMe/"
+  },
+  {
+    name: "ChronoLux Horology",
+    cat: "shop",
+    rank: "♔ E1",
+    tags: ["Luxury E-Commerce", "Horology", "Bespoke UI"],
+    desc: [
+      "متجر إلكتروني للساعات الفاخرة بتصميم ملكي يبرز أدق تفاصيل العقارب والمعادن الثمينة لكل قطعة.",
+      "Ultra-luxury watchmaking e-commerce showcase crafted with dark-gold horological elegance.",
+      "Boutique en ligne de haute horlogerie mettant en valeur chaque garde-temps avec élégance."
+    ],
+    img: "images/projects/proj2.png",
+    link: BASE_GH + "ChronoLux/"
+  },
+  {
+    name: "DomiLux Real Estate",
+    cat: "web",
+    rank: "♖ D1",
+    tags: ["Luxury Real Estate", "Architecture", "Property"],
+    desc: [
+      "بوابة عقارية فاخرة لعرض الفيلات والقصور والمنازل العصرية للبيع والإيجار مع جولات بصرية عالية الدقة.",
+      "High-end real estate platform showcasing luxury villas, architectural estates, and property filtering.",
+      "Portail immobilier de prestige dédié aux villas et résidences d’exception."
+    ],
+    img: "images/projects/proj6.png",
+    link: BASE_GH + "web-DomiLux/"
+  },
+  {
+    name: "DjaafarBook Social",
+    cat: "app",
+    rank: "♘ C3",
+    tags: ["Social Network UI", "Feed Engine", "Interactive"],
+    desc: [
+      "واجهة شبكة تواصل اجتماعي متكاملة تتضمن شريط أخبار تفاعلي، ملفات شخصية، وقصص مصورة.",
+      "Full social network interface featuring interactive news feeds, user profiles, and real-time reactions.",
+      "Interface de réseau social complète avec fil d’actualité, profils et interactions."
+    ],
+    img: "images/projects/DjaafarBook.png",
+    link: BASE_GH + "DjaafarBook/"
+  },
+  {
+    name: "EasyBank Digital",
+    cat: "app",
+    rank: "♗ F4",
+    tags: ["Neobank", "Fintech", "Modern UI"],
+    desc: [
+      "واجهة بنك رقمي حديث لعرض الحسابات الذكية، البطاقات الائتمانية، وإدارة الميزانية الشخصية.",
+      "Next-generation digital banking landing experience highlighting smart budgeting and instant cards.",
+      "Expérience bancaire numérique moderne dédiée à la gestion financière intelligente."
+    ],
+    img: "images/projects/EasyBank.png",
+    link: BASE_GH + "EasyBank/"
+  },
+  {
+    name: "GameZone Arena",
+    cat: "app",
+    rank: "♘ E5",
+    tags: ["Gaming Hub", "Esports", "Interactive UI"],
+    desc: [
+      "منصة ألعاب إلكترونية نابضة بالحياة تعرض أحدث الإصدارات، البطولات، وأخبار الرياضات الإلكترونية.",
+      "High-octane gaming and esports portal featuring tournament schedules and game catalogs.",
+      "Portail gaming et e-sport dynamique présentant catalogues de jeux et tournois."
+    ],
+    img: "images/projects/GameZone.png",
+    link: BASE_GH + "GameZone/"
+  },
+  {
+    name: "SoundVibe Audio",
+    cat: "shop",
+    rank: "♕ B7",
+    tags: ["E-Commerce", "Audio Gear", "Product Showcase"],
+    desc: [
+      "متجر إلكتروني متخصص في سماعات الرأس الاحترافية والمعدات الصوتية مع مقارنة المواصفات والتقييمات.",
+      "Audiophile e-commerce store for studio headphones and acoustic gear with interactive product cards.",
+      "Boutique en ligne dédiée aux casques audio et équipements acoustiques haute fidélité."
+    ],
+    img: "images/projects/headPhone.png",
+    link: BASE_GH + "SoundVibe/"
+  },
+  {
+    name: "WalkTrend Footwear",
+    cat: "shop",
+    rank: "♗ G5",
+    tags: ["Fashion E-Commerce", "Sneakers", "Dynamic Cart"],
+    desc: [
+      "متجر إلكتروني للأحذية الرياضية والموضة العصرية مع فلترة سريعة للمقاسات والألوان.",
+      "Modern footwear and sneaker e-commerce storefront with dynamic filtering and lookbook grids.",
+      "Boutique e-commerce de sneakers et mode urbaine avec filtrage dynamique."
+    ],
+    img: "images/projects/WalkTrend.png",
+    link: BASE_GH + "WalkTrend/"
+  },
+  {
+    name: "Crave Cafe & Roastery",
+    cat: "web",
+    rank: "♙ E4",
+    tags: ["Hospitality", "Café Menu", "Warm Aesthetic"],
+    desc: [
+      "موقع تعريفي لمقهى مختص يعرض قائمة القهوة، الحلويات، وأجواء المكان بتصميم دافئ وجذاب.",
+      "Artisanal coffeehouse website with interactive menu categories, reservation flow, and warm storytelling.",
+      "Site vitrine pour café artisanal avec menu interactif et ambiance chaleureuse."
+    ],
+    img: "images/projects/proj1.png",
+    link: BASE_GH + "Crave-Cafe/"
+  },
+  {
+    name: "GreenEats Organic",
+    cat: "shop",
+    rank: "♙ D5",
+    tags: ["Food Delivery", "Organic", "Interactive Cart"],
+    desc: [
+      "منصة لطلب الوجبات الصحية والعضوية عبر الإنترنت مع حساب السعرات وسلة طلبات فورية.",
+      "Healthy & organic meal delivery web app featuring macro-friendly menus and cart management.",
+      "Plateforme de commande de repas bio et sains avec panier interactif."
+    ],
+    img: "images/projects/proj4.png",
+    link: BASE_GH + "GreenEats/"
+  },
+  {
+    name: "GreenVibe Sustainability",
+    cat: "web",
+    rank: "♗ B5",
+    tags: ["Eco Tech", "Sustainability", "Green Brand"],
+    desc: [
+      "موقع لمبادرة وعلامة تجارية صديقة للبيئة يعرض الحلول المستدامة والمنتجات البيئية.",
+      "Eco-conscious brand platform highlighting renewable initiatives and sustainable products.",
+      "Site dédié à l’écologie et aux initiatives de développement durable."
+    ],
+    img: "images/projects/proj5.png",
+    link: BASE_GH + "GreenVibe/"
+  },
+  {
+    name: "Web Photographer Studio",
+    cat: "web",
+    rank: "♕ H5",
+    tags: ["Photography", "Visual Gallery", "Lightbox"],
+    desc: [
+      "معرض أعمال بصري لمصور فوتوغرافي محترف يركز على الإضاءة الدرامية وتفاصيل العدسة.",
+      "Minimalist high-contrast photography portfolio with full-screen gallery transitions.",
+      "Portfolio de photographe professionnel mettant en scène des galeries haute résolution."
+    ],
+    img: "images/projects/Photography.png",
+    link: BASE_GH + "Web-Photographer/"
+  },
+  {
+    name: "Swiftly Logistics",
+    cat: "web",
+    rank: "♖ C8",
+    tags: ["Logistics", "Supply Chain", "Tracking UI"],
+    desc: [
+      "منصة لخدمات الشحن السريع واللوجستيات تعرض تتبع الشحنات وخطط الأسعار للشركات والأفراد.",
+      "Express courier and freight logistics portal with shipment tracking and rate calculators.",
+      "Plateforme de logistique et livraison express avec suivi d’expédition."
+    ],
+    img: "images/projects/proj8.png",
+    link: BASE_GH + "Swiftly/"
+  },
+  {
+    name: "IF-PuB Creative Agency",
+    cat: "web",
+    rank: "♘ D2",
+    tags: ["Advertising Agency", "Branding", "Marketing"],
+    desc: [
+      "موقع لوكالة إعلانات وتسويق رقمي يستعرض الحملات الإبداعية والهويات البصرية للعملاء.",
+      "Digital advertising and branding agency showcase featuring client case studies and campaign metrics.",
+      "Site d’agence de publicité et communication digitale présentant ses campagnes."
+    ],
+    img: "images/projects/IF-PUB.png",
+    link: BASE_GH + "IF-PuB/"
+  },
+  {
+    name: "IronPulse Fitness Club",
+    cat: "web",
+    rank: "♖ E2",
+    tags: ["Fitness", "Gym", "Training Programs"],
+    desc: [
+      "موقع لنادي رياضي متكامل يعرض جداول التدريب، المدربين، وباقات الاشتراك بتصميم حماسي.",
+      "High-energy athletic club and gym portal with class schedules and membership tiers.",
+      "Site de club de fitness présentant programmes d’entraînement et abonnements."
+    ],
+    img: "images/projects/Gym.png",
+    link: BASE_GH + "IronPulse/"
+  },
+  {
+    name: "BeachEscape Resorts",
+    cat: "web",
+    rank: "♗ A6",
+    tags: ["Travel & Booking", "Luxury Resorts", "Tourism"],
+    desc: [
+      "موقع لحجز العطلات والمنتجعات الشاطئية يستعرض الوجهات السياحية والعروض الموسمية.",
+      "Coastal resort and travel booking interface with destination curation and package previews.",
+      "Plateforme de réservation d’escapades balnéaires et séjours touristiques."
+    ],
+    img: "images/projects/BeachEscape.png",
+    link: BASE_GH + "BeachEscape/"
+  },
+  {
+    name: "Mendjadid Business",
+    cat: "web",
+    rank: "♙ C5",
+    tags: ["Corporate", "B2B Services", "Consulting"],
+    desc: [
+      "موقع مؤسسي احترافي لعرض الخدمات التجارية والاستشارية للشركات بواجهة رسمية أنيقة.",
+      "Corporate B2B consulting website designed for clarity, trust, and lead conversion.",
+      "Site vitrine professionnel pour entreprise de services et conseil B2B."
+    ],
+    img: "images/projects/web_mendjadid.png",
+    link: BASE_GH + "web_mendjadid/"
+  },
+  {
+    name: "HelpMe Support Hub",
+    cat: "app",
+    rank: "♘ B6",
+    tags: ["Helpdesk", "Support Ticket", "Knowledge Base"],
+    desc: [
+      "منصة مساعدة ودعم فني تربط المستخدمين بالحلول الفورية وقاعدة المعرفة التفاعلية.",
+      "Customer support and knowledge-base web platform connecting users with rapid solutions.",
+      "Plateforme d’assistance technique et base de connaissances interactive."
+    ],
+    img: "images/projects/webHelpMe.png",
+    link: BASE_GH + "webHelpMe/"
+  },
+  {
+    name: "Developer Portfolio Template I",
+    cat: "web",
+    rank: "♙ F3",
+    tags: ["Portfolio System", "UI Template", "Clean Code"],
+    desc: [
+      "قالب بورتفوليو احترافي لمطوري البرمجيات مصمم لعرض المهارات والمشاريع بسلاسة.",
+      "Modular software engineer portfolio template engineered for clean typography and speed.",
+      "Modèle de portfolio pour développeur conçu avec une typographie soignée."
+    ],
+    img: "images/projects/Devloper-Portfolio.png",
+    link: BASE_GH + "Devloper-Portfolio/"
+  },
+  {
+    name: "Portfolio Architecture II",
+    cat: "web",
+    rank: "♙ G3",
+    tags: ["Creative Portfolio", "Frontend", "Responsive"],
+    desc: [
+      "نسخة ثانية من قالب المعرض الشخصي بتوزيع بصري مختلف وتجربة تصفح متجاوبة.",
+      "Alternative personal portfolio layout exploring bold grid cards and dark-mode contrast.",
+      "Variante de portfolio personnel explorant une mise en page en grille moderne."
+    ],
+    img: "images/projects/portfolio2.png",
+    link: BASE_GH + "Portfolio-2/"
+  },
+  {
+    name: "Legacy Portfolio Archive",
+    cat: "web",
+    rank: "♙ H3",
+    tags: ["Archive", "Web Evolution", "Milestone"],
+    desc: [
+      "الإصدار الكلاسيكي الأول من معرض أعمالي قبل تطوير نظام DjaafarOS وهوية القلعة الملكية.",
+      "The original milestone portfolio preceding the DjaafarOS and Grandmaster Citadel editions.",
+      "Le premier portfolio historique ayant précédé DjaafarOS et l’édition Citadelle."
+    ],
+    img: "images/projects/portfolio3.png",
+    link: BASE_GH + "MyPortgolio/"
+  }
+];
+
+const VAULT_PLATES = [
+  { code: "PLATE I · E4", title: ["قاعة العرش المعمارية", "The Grandmaster’s Citadel Hall", "La Salle du Trône"], img: "images/vault/citadel_hero.jpg" },
+  { code: "PLATE II · E1", title: ["ملك الأوبسيديان والذهب", "Obsidian Sovereign King", "Le Roi d’Obsidienne"], img: "images/vault/chess_king_obsidian.jpg" },
+  { code: "PLATE III · F6", title: ["فارس الشبكات العصبية", "Damascus Neural Knight", "Cavalier Neuronal"], img: "images/vault/chess_knight_neural.jpg" },
+  { code: "PLATE IV · D4", title: ["أسطرلاب الواحة الذكية", "Oasis IoT Astrolabe", "Astrolabe IoT des Oasis"], img: "images/vault/astrolabe_iot.jpg" },
+  { code: "PLATE V · A1", title: ["حصن الخوادم الخلفية", "Rook Backend Fortress", "Forteresse Backend"], img: "images/vault/plate_01_backend_citadel.jpg" },
+  { code: "PLATE VI · D8", title: ["تاج الذكاء الاصطناعي", "Sovereign AI Crown", "Couronne de l’IA"], img: "images/vault/plate_02_ai_sovereign.jpg" },
+  { code: "PLATE VII · C4", title: ["نافذة المستشعرات القوطية", "Gothic Sensor Rose Window", "Rosace des Capteurs"], img: "images/vault/plate_03_iot_sanctum.jpg" },
+  { code: "PLATE VIII · F3", title: ["منارة تطبيقات الموبايل", "Bishop Mobile Spire", "Flèche Mobile Flutter"], img: "images/vault/plate_04_mobile_vanguard.jpg" },
+  { code: "PLATE IX · A8", title: ["ساعة الأرشيف والرقمنة", "Chronicle Digitization Glass", "Sablier des Archives"], img: "images/vault/plate_05_archive_codex.jpg" },
+  { code: "PLATE X · H8", title: ["درع الأنظمة الصناعية", "Industrial Systems Shield", "Bouclier Industriel"], img: "images/vault/plate_06_sonatrach_forge.jpg" },
+  { code: "PLATE XI · B7", title: ["وسام الابتكار الأول", "Startup Laureate Crest I", "Blason Startup I"], img: "images/vault/plate_07_startup_crest_1.jpg" },
+  { code: "PLATE XII · G5", title: ["نجمة التوجيه الريادي", "Startup Mentorship Star", "Étoile du Mentorat"], img: "images/vault/plate_08_startup_crest_2.jpg" },
+  { code: "PLATE XIII · D5", title: ["مفتاح الأمن السيبراني", "Intigriti Cipher Key", "Clé Cybersécurité"], img: "images/vault/plate_09_cyber_bounty.jpg" },
+  { code: "PLATE XIV · C6", title: ["خيمياء البيانات (Kaggle)", "Kaggle Data Alchemy", "Alchimie des Données"], img: "images/vault/plate_10_kaggle_alchemy.jpg" },
+  { code: "PLATE XV · E8", title: ["قلعة نهاية اللعب", "Endgame Precision Rook", "Tour de Finale"], img: "images/vault/plate_11_chess_endgame.jpg" },
+  { code: "PLATE XVI · E3", title: ["مدار ورقلة الشمسي", "Ouargla Solar Meridian", "Méridien d’Ouargla"], img: "images/vault/plate_12_ouargla_meridian.jpg" },
+  { code: "PLATE XVII · B4", title: ["نقابة بايثون وجانغو", "Python & Django Guild", "Guilde Python & Django"], img: "images/vault/plate_13_django_guild.jpg" },
+  { code: "PLATE XVIII · G2", title: ["ترسانة فلاتر العابرة", "Flutter Cross-Platform Spire", "Spire Flutter"], img: "images/vault/plate_14_flutter_armory.jpg" },
+  { code: "PLATE XIX · D1", title: ["خزينة قواعد البيانات", "Relational & NoSQL Vault", "Coffre de Données"], img: "images/vault/plate_15_database_vault.jpg" },
+  { code: "PLATE XX · E5", title: ["الختم الملكي لجعفر", "Grandmaster Sovereign Seal", "Sceau Souverain"], img: "images/vault/plate_16_grandmaster_seal.jpg" }
+];
+
+const CV_SCROLLS = [
+  { title: ["السيرة الذاتية الرسمية الشاملة (Master PDF)", "Master Curriculum Vitae (Full-Stack, AI & IoT)", "CV Officiel Complet (Full-Stack, IA & IoT)"], domain: "Master Edition · 2025–2026", file: "CV_Lecheheb_Djaafar.pdf", badge: "♔" },
+  { title: ["السيرة الذاتية العامة (Global CV)", "General Full-Stack Portfolio CV", "CV Général Full-Stack"], domain: "General / Full-Stack", file: "CV_Lecheheb_Djaafar.pdf", badge: "♕" },
+  { title: ["مطور Full-Stack — Python & Django", "Full-Stack Developer — Python Specialist", "Développeur Full-Stack — Python"], domain: "Python / Backend & Web", file: "CV_Lecheheb_Djaafar.pdf", badge: "♖" },
+  { title: ["مهندس إنترنت الأشياء والأتمتة الذكية", "IoT, ESP32 & AI Automation Engineer", "Ingénieur IoT & Automatisation IA"], domain: "IoT & AI Automation", file: "CV_Lecheheb_Djaafar.pdf", badge: "♘" },
+  { title: ["مطور تطبيقات الموبايل والمنصات (Flutter)", "Mobile & Web Systems Architect", "Architecte Mobile Flutter & Web"], domain: "Flutter / Firebase", file: "CV_Lecheheb_Djaafar.pdf", badge: "♗" },
+  { title: ["ملف المهارات والشهادات المعتمدة", "Certifications & 5× Startup Labels Dossier", "Dossier Certifications & 5× Labels Startup"], domain: "NVIDIA · Udemy · Startup Labels", file: "CV_Lecheheb_Djaafar.pdf", badge: "⚜" }
+];
+
+const LANG_CODES = ['ar', 'en', 'fr'];
+let currentLang = 'ar';
+let currentFilter = 'all';
+let searchQuery = '';
+let showAllProjects = false;
+let soundEnabled = false;
+let audioCtx = null;
+
+function playRoyalChime(freq = 528, type = 'triangle', duration = 0.12) {
+  if (!soundEnabled) return;
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + duration);
+  } catch (e) {}
+}
+
+function getLangIndex() {
+  const idx = LANG_CODES.indexOf(currentLang);
+  return idx >= 0 ? idx : 0;
+}
+
+function renderProjects() {
+  const grid = document.getElementById('projects-grid');
+  const toggleBtn = document.getElementById('toggle-all-projects');
+  const li = getLangIndex();
+
+  const filtered = PROJECTS_DATA.filter(p => {
+    const matchCat = currentFilter === 'all' || p.cat === currentFilter;
+    const q = searchQuery.trim().toLowerCase();
+    const matchSearch = !q ||
+      p.name.toLowerCase().includes(q) ||
+      p.tags.some(t => t.toLowerCase().includes(q)) ||
+      p.desc[li].toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+
+  const visibleList = (showAllProjects || currentFilter !== 'all' || searchQuery.trim() !== '')
+    ? filtered
+    : filtered.slice(0, 9);
+
+  grid.innerHTML = '';
+  visibleList.forEach((proj) => {
+    const card = document.createElement('article');
+    card.className = 'project-card';
+    const catLabels = {
+      chess: ['شطرنج وذكاء اصطناعي', 'Chess & AI', 'Échecs & IA'],
+      app: ['منصة تفاعلية', 'Web Platform', 'Plateforme Web'],
+      shop: ['متجر فاخر', 'E-Commerce', 'Boutique'],
+      web: ['موقع احترافي', 'Web Architecture', 'Site Web']
+    };
+    const catText = (catLabels[proj.cat] || catLabels.web)[li];
+    const openLabel = ['معاينة حية ↗', 'Live Demo ↗', 'Démo Live ↗'][li];
+    const inspectLabel = ['تفاصيل ⚜', 'Inspect ⚜', 'Inspecter ⚜'][li];
+
+    card.innerHTML = `
+      <div class="proj-thumb-wrap">
+        <img src="${proj.img}" alt="${proj.name}" loading="lazy">
+        <span class="proj-chess-rank">${proj.rank}</span>
+        <span class="proj-cat-badge">${catText}</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-title">
+          <span>${proj.name}</span>
+        </div>
+        <p class="proj-desc">${proj.desc[li]}</p>
+        <div class="proj-tags">
+          ${proj.tags.map(t => `<span class="proj-tag">${t}</span>`).join('')}
+        </div>
+        <div class="proj-actions">
+          <a href="${proj.link}" target="_blank" rel="noopener" class="proj-link-btn">${openLabel}</a>
+          <button type="button" class="proj-inspect-btn" data-proj-idx="${PROJECTS_DATA.indexOf(proj)}">${inspectLabel}</button>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  grid.querySelectorAll('[data-proj-idx]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const p = PROJECTS_DATA[parseInt(btn.getAttribute('data-proj-idx'), 10)];
+      openModal({
+        img: p.img,
+        badge: `${p.rank} · ${p.tags.join(' · ')}`,
+        title: p.name,
+        desc: p.desc[getLangIndex()],
+        link: p.link
+      });
+    });
+  });
+
+  if (currentFilter === 'all' && searchQuery.trim() === '' && filtered.length > 9) {
+    toggleBtn.style.display = 'inline-flex';
+    const showMoreTxt = [
+      `عرض كل المشاريع (${filtered.length} مشروعاً كاملاً) ♖`,
+      `Reveal All ${filtered.length} Projects in the Armory ♖`,
+      `Afficher les ${filtered.length} Projets de l’Armurerie ♖`
+    ][li];
+    const showLessTxt = [
+      `طي القائمة (عرض أهم 9 مشاريع) ↑`,
+      `Collapse Armory (Show Top 9) ↑`,
+      `Réduire la Liste (Top 9) ↑`
+    ][li];
+    toggleBtn.innerHTML = `<span>⚜</span> <span>${showAllProjects ? showLessTxt : showMoreTxt}</span>`;
+  } else {
+    toggleBtn.style.display = 'none';
+  }
+}
+
+function renderVault() {
+  const vGrid = document.getElementById('vault-grid');
+  const li = getLangIndex();
+  vGrid.innerHTML = '';
+  VAULT_PLATES.forEach((plate) => {
+    const item = document.createElement('div');
+    item.className = 'vault-plate-card';
+    item.innerHTML = `
+      <img src="${plate.img}" alt="${plate.title[li]}" loading="lazy">
+      <div class="vault-overlay">
+        <span class="vault-code">${plate.code}</span>
+        <span class="vault-name">${plate.title[li]}</span>
+      </div>
+    `;
+    item.addEventListener('click', () => {
+      openModal({
+        img: plate.img,
+        badge: plate.code,
+        title: plate.title[li],
+        desc: [
+          'لوحة فنية مصممة خصيصاً لهوية القلعة الملكية تدمج زخارف العصور الوسطى وهندسة الشطرنج بالتقنيات الحديثة.',
+          'Bespoke high-craft visual plate blending medieval gothic gold filigree, chess strategy, and modern software engineering.',
+          'Planche visuelle sur mesure alliant esthétique médiévale dorée, stratégie des échecs et ingénierie logicielle.'
+        ][li],
+        link: '#vault'
+      });
+    });
+    vGrid.appendChild(item);
+  });
+}
+
+function renderCVScrolls() {
+  const cGrid = document.getElementById('cv-scrolls-grid');
+  const li = getLangIndex();
+  cGrid.innerHTML = '';
+  CV_SCROLLS.forEach((cv, idx) => {
+    const card = document.createElement('div');
+    card.className = 'cv-scroll-item';
+    card.style.cursor = 'pointer';
+    card.innerHTML = `
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div class="wax-seal-icon">${cv.badge}</div>
+        <div>
+          <div style="font-weight:700;font-size:15px;color:var(--text-ivory);">${cv.title[li]}</div>
+          <div style="font-family:var(--font-mono);font-size:11.5px;color:var(--gold-primary);margin-top:3px;">${cv.domain}</div>
+        </div>
+      </div>
+      <span style="color:var(--gold-bright);font-weight:800;font-size:18px;">📜</span>
+    `;
+    card.addEventListener('click', () => {
+      openModal({
+        img: VAULT_PLATES[(idx + 4) % VAULT_PLATES.length].img,
+        badge: `${cv.badge} · ${cv.domain}`,
+        title: cv.title[li],
+        desc: [
+          'لشهب جعفر — ماستر إعلام آلي بامتياز (2025)، مطور Full-Stack Python & Flutter، خبير الذكاء الاصطناعي وإنترنت الأشياء، حائز 5 أوسمة Startup. البريد: djaafardjaafarlolo@gmail.com | الهاتف: +213 658 30 14 20',
+          'Lecheheb Djaafar — Master’s in CS (With Distinction, 2025), Full-Stack Python & Flutter Developer, AI & IoT Innovator, 5× Startup Label Laureate. Email: djaafardjaafarlolo@gmail.com | Tel: +213 658 30 14 20',
+          'Lecheheb Djaafar — Master en Informatique (Avec Distinction, 2025), Développeur Full-Stack Python & Flutter, IA & IoT, 5× Labels Startup. Email : djaafardjaafarlolo@gmail.com | Tél : +213 658 30 14 20'
+        ][li],
+        link: 'https://www.linkedin.com/in/lecheheb-djaafar-226594348/'
+      });
+    });
+    cGrid.appendChild(card);
+  });
+}
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  const li = getLangIndex();
+  const htmlEl = document.documentElement;
+  htmlEl.lang = lang;
+  htmlEl.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-i]').forEach(el => {
+    const key = el.getAttribute('data-i');
+    if (I18N[key] && I18N[key][li]) {
+      el.textContent = I18N[key][li];
+    }
+  });
+
+  const searchIn = document.getElementById('project-search');
+  if (searchIn) {
+    searchIn.placeholder = [
+      'ابحث عن مشروع أو تقنية (مثل Chess, AI, Python)...',
+      'Search 27 projects or tech stack (e.g. Chess, AI, Python)...',
+      'Rechercher un projet ou une technologie (ex. Chess, IA, Python)...'
+    ][li];
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.setAttribute('aria-pressed', btn.getAttribute('data-l') === lang ? 'true' : 'false');
+  });
+
+  try { localStorage.setItem('citadel_lang', lang); } catch (e) {}
+
+  renderProjects();
+  renderVault();
+  renderCVScrolls();
+  updateChessStatusText();
+}
+
+const PUZZLES = [
+  {
+    name: ['مناورة القلعة والوزير (مات في 1)', 'Queen & Rook Citadel Strike (Mate in 1)', 'Attaque Dame & Tour (Mat en 1)'],
+    board: [
+      ['.','.','.','r','.','.','k','.'],
+      ['.','.','.','.','.','p','p','p'],
+      ['.','.','.','.','.','.','.','.'],
+      ['.','.','.','Q','.','.','.','.'],
+      ['.','.','.','.','.','.','.','.'],
+      ['.','.','N','.','.','.','.','.'],
+      ['P','P','P','.','.','P','P','P'],
+      ['.','.','.','R','.','.','K','.']
+    ],
+    winFrom: [3, 3],
+    winTo: [0, 3],
+    winMsg: [
+      '♛ كش مات ملكي! الوزير يحسم المعركة في المربع D8 بحماية القلعة!',
+      '♛ Sovereign Checkmate! Qxd8# seals the back-rank victory!',
+      '♛ Échec et Mat Royal ! Dxd8# scelle la victoire sur la 8e rangée !'
+    ]
+  },
+  {
+    name: ['قفزة الفارس الخانقة (مات في 1)', 'Smothered Knight Leap (Mate in 1)', 'Mat à l’Étouffée du Cavalier'],
+    board: [
+      ['.','.','.','.','.','r','k','r'],
+      ['.','.','.','.','.','p','p','p'],
+      ['.','.','.','.','N','.','.','.'],
+      ['.','.','.','.','.','.','.','.'],
+      ['.','.','B','.','.','.','.','.'],
+      ['.','.','.','.','.','.','.','.'],
+      ['P','P','P','.','.','P','P','P'],
+      ['.','.','.','R','.','.','K','.']
+    ],
+    winFrom: [2, 4],
+    winTo: [1, 6],
+    winMsg: [
+      '♞ ضربة الفارس الذهبية! النقلة Nxg7 تحسم الرقعة فوراً!',
+      '♞ Tactical Knight Strike! Nxg7 delivers decisive victory!',
+      '♞ Frappe Tactique du Cavalier ! Cxg7 décide la partie !'
+    ]
+  }
+];
+
+const PIECE_GLYPHS = {
+  'K': '♔', 'Q': '♕', 'R': '♖', 'B': '♗', 'N': '♘', 'P': '♙',
+  'k': '♚', 'q': '♛', 'r': '♜', 'b': '♝', 'n': '♞', 'p': '♟'
+};
+
+let currentPuzzleIdx = 0;
+let boardState = [];
+let selectedSq = null;
+let puzzleSolved = false;
+
+function initChessPuzzle(idx = 0) {
+  currentPuzzleIdx = idx % PUZZLES.length;
+  boardState = PUZZLES[currentPuzzleIdx].board.map(row => [...row]);
+  selectedSq = null;
+  puzzleSolved = false;
+  renderChessBoard();
+  updateChessStatusText();
+}
+
+function updateChessStatusText() {
+  const badge = document.getElementById('chess-status-badge');
+  const hint = document.getElementById('chess-hint-text');
+  const li = getLangIndex();
+  if (!badge || !hint) return;
+  if (puzzleSolved) {
+    badge.textContent = ['👑 انتصار استراتيجي!', '👑 Checkmate Solved!', '👑 Mat Résolu !'][li];
+    hint.textContent = PUZZLES[currentPuzzleIdx].winMsg[li];
+  } else {
+    badge.textContent = PUZZLES[currentPuzzleIdx].name[li];
+    hint.textContent = I18N.chessHintDefault[li];
+  }
+}
+
+function renderChessBoard() {
+  const boardEl = document.getElementById('tactical-board');
+  if (!boardEl) return;
+  boardEl.innerHTML = '';
+  const puz = PUZZLES[currentPuzzleIdx];
+
+  for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+      const sq = document.createElement('div');
+      const isLight = (r + c) % 2 === 0;
+      sq.className = `chess-sq ${isLight ? 'light-sq' : 'dark-sq'}`;
+      if (selectedSq && selectedSq[0] === r && selectedSq[1] === c) {
+        sq.classList.add('selected-sq');
+      }
+      if (selectedSq && !puzzleSolved && r === puz.winTo[0] && c === puz.winTo[1] &&
+          selectedSq[0] === puz.winFrom[0] && selectedSq[1] === puz.winFrom[1]) {
+        sq.classList.add('valid-target');
+      }
+
+      const piece = boardState[r][c];
+      if (piece !== '.') {
+        const span = document.createElement('span');
+        const isWhite = piece === piece.toUpperCase();
+        span.className = `piece-char ${isWhite ? 'white-p' : 'black-p'}`;
+        span.textContent = PIECE_GLYPHS[piece] || '';
+        sq.appendChild(span);
+      }
+
+      sq.addEventListener('click', () => handleSquareClick(r, c));
+      boardEl.appendChild(sq);
+    }
+  }
+}
+
+function handleSquareClick(r, c) {
+  const clickedPiece = boardState[r][c];
+  const puz = PUZZLES[currentPuzzleIdx];
+
+  if (!selectedSq) {
+    if (clickedPiece !== '.') {
+      selectedSq = [r, c];
+      playRoyalChime(440, 'sine', 0.08);
+      renderChessBoard();
+    }
+    return;
+  }
+
+  const [sr, sc] = selectedSq;
+  if (sr === r && sc === c) {
+    selectedSq = null;
+    renderChessBoard();
+    return;
+  }
+
+  boardState[r][c] = boardState[sr][sc];
+  boardState[sr][sc] = '.';
+  selectedSq = null;
+
+  if (sr === puz.winFrom[0] && sc === puz.winFrom[1] && r === puz.winTo[0] && c === puz.winTo[1]) {
+    puzzleSolved = true;
+    playRoyalChime(660, 'triangle', 0.25);
+    setTimeout(() => playRoyalChime(880, 'triangle', 0.35), 140);
+  } else {
+    playRoyalChime(520, 'sine', 0.1);
+  }
+
+  renderChessBoard();
+  updateChessStatusText();
+}
+
+function openModal({ img, badge, title, desc, link }) {
+  const modal = document.getElementById('inspector-modal');
+  document.getElementById('modal-img').src = img;
+  document.getElementById('modal-img').alt = title;
+  document.getElementById('modal-badge').textContent = badge;
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-desc').textContent = desc;
+  const liveLink = document.getElementById('modal-live-link');
+  if (link && link !== '#vault') {
+    liveLink.style.display = 'inline-flex';
+    liveLink.href = link;
+  } else {
+    liveLink.style.display = 'none';
+  }
+  modal.classList.add('open');
+  playRoyalChime(587, 'triangle', 0.12);
+}
+
+function closeModal() {
+  document.getElementById('inspector-modal').classList.remove('open');
+}
+
+function updateDeviceSensor() {
+  const lbl = document.getElementById('device-mode-label');
+  if (!lbl) return;
+  const w = window.innerWidth;
+  if (w <= 760) {
+    lbl.textContent = 'MOBILE ARMOR ACTIVE';
+    document.body.setAttribute('data-viewport', 'mobile');
+  } else if (w <= 1080) {
+    lbl.textContent = 'TABLET TACTICAL';
+    document.body.setAttribute('data-viewport', 'tablet');
+  } else {
+    lbl.textContent = 'DESKTOP CITADEL';
+    document.body.setAttribute('data-viewport', 'desktop');
+  }
+}
+
+function initParticles() {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+
+  window.addEventListener('resize', () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+    updateDeviceSensor();
+  });
+
+  const count = window.innerWidth < 760 ? 22 : 45;
+  const embers = Array.from({ length: count }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 2.2 + 0.6,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: -Math.random() * 0.45 - 0.15,
+    alpha: Math.random() * 0.65 + 0.2
+  }));
+
+  function step() {
+    ctx.clearRect(0, 0, w, h);
+    embers.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
+      if (p.x < -10) p.x = w + 10;
+      if (p.x > w + 10) p.x = -10;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(212, 168, 83, ${p.alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  updateDeviceSensor();
+  initParticles();
+  initChessPuzzle(0);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      playRoyalChime(620, 'sine', 0.09);
+      applyLanguage(btn.getAttribute('data-l'));
+    });
+  });
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.getAttribute('data-filter');
+      playRoyalChime(490, 'sine', 0.08);
+      renderProjects();
+    });
+  });
+
+  const searchIn = document.getElementById('project-search');
+  if (searchIn) {
+    searchIn.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderProjects();
+    });
+  }
+
+  const toggleBtn = document.getElementById('toggle-all-projects');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      showAllProjects = !showAllProjects;
+      playRoyalChime(540, 'triangle', 0.1);
+      renderProjects();
+    });
+  }
+
+  const rig = document.getElementById('profile-rig');
+  document.querySelectorAll('[data-aura-btn]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-aura-btn]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      rig.setAttribute('data-aura', btn.getAttribute('data-aura-btn'));
+      playRoyalChime(600, 'sine', 0.1);
+    });
+  });
+
+  if (rig) {
+    rig.addEventListener('mousemove', (e) => {
+      const rect = rig.getBoundingClientRect();
+      const dx = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+      const dy = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+      rig.style.transform = `rotateY(${dx * 11}deg) rotateX(${-dy * 11}deg)`;
+    });
+    rig.addEventListener('mouseleave', () => {
+      rig.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
+
+  document.getElementById('chess-puzzle-btn').addEventListener('click', () => {
+    initChessPuzzle(currentPuzzleIdx + 1);
+    playRoyalChime(520, 'triangle', 0.1);
+  });
+  document.getElementById('chess-reset-btn').addEventListener('click', () => {
+    initChessPuzzle(currentPuzzleIdx);
+    playRoyalChime(420, 'sine', 0.08);
+  });
+
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const htmlEl = document.documentElement;
+    const next = htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    htmlEl.setAttribute('data-theme', next);
+    playRoyalChime(500, 'triangle', 0.1);
+    try { localStorage.setItem('citadel_theme', next); } catch (e) {}
+  });
+
+  const soundBtn = document.getElementById('sound-toggle');
+  soundBtn.addEventListener('click', () => {
+    soundEnabled = !soundEnabled;
+    soundBtn.setAttribute('aria-pressed', soundEnabled ? 'true' : 'false');
+    if (soundEnabled) playRoyalChime(660, 'triangle', 0.16);
+  });
+
+  const copyBtn = document.getElementById('copy-email-btn');
+  copyBtn.addEventListener('click', () => {
+    const email = 'djaafardjaafarlolo@gmail.com';
+    try {
+      navigator.clipboard.writeText(email);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = email;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      ta.remove();
+    }
+    const span = copyBtn.querySelector('span:last-child');
+    const orig = span.textContent;
+    span.textContent = ['تم النسخ بنجاح ✓', 'Copied to Clipboard ✓', 'Email Copié ✓'][getLangIndex()];
+    playRoyalChime(740, 'triangle', 0.15);
+    setTimeout(() => { span.textContent = orig; }, 2200);
+  });
+
+  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+  document.getElementById('inspector-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'inspector-modal') closeModal();
+  });
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  const roles = [
+    'Full-Stack Python & Flutter Architect',
+    'AI & Deep Learning Engineer (NVIDIA / Udemy)',
+    'Smart IoT & Solar Systems Innovator',
+    '5× Startup Label Laureate & Mentor',
+    'Chess Engine & Strategic Software Creator'
+  ];
+  let roleIdx = 0;
+  const twEl = document.getElementById('typewriter-text');
+  setInterval(() => {
+    roleIdx = (roleIdx + 1) % roles.length;
+    if (twEl) twEl.textContent = roles[roleIdx];
+  }, 3400);
+
+  const progBar = document.getElementById('scroll-progress');
+  const rankSpans = document.querySelectorAll('.chess-ranks-rail span');
+  window.addEventListener('scroll', () => {
+    const sc = window.scrollY;
+    const maxSc = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const pct = Math.min(100, Math.max(0, (sc / maxSc) * 100));
+    if (progBar) progBar.style.width = pct + '%';
+
+    const activeIdx = Math.min(7, Math.floor((pct / 100) * 8));
+    rankSpans.forEach((s, i) => {
+      s.classList.toggle('active-rank', i === activeIdx);
+    });
+  }, { passive: true });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+  let initLang = 'ar';
+  try {
+    initLang = localStorage.getItem('citadel_lang') || 'ar';
+  } catch (e) {}
+  applyLanguage(initLang);
+});
+</script>
+</body>
+</html>
